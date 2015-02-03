@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		#editorBox {
+			width: 200px;
+			height: 200px;
+		}
+		#editorPane, #toolPane {position: absolute;}
+		#editorPane {left: 0;}
+		#toolPane {right: 0;}
+
+		html, body {
+			margin: 0;
+			padding: 0;
+		}
+
+		header {
+			background: lightgrey;
+			height: 48px;
+		}
+	</style>
+</head>
+<body>
+
+<header>
+
+</header>
+
+</section>
+
+<section id="editorPane">
+	<div id="wysiwyg">
+		<div id="editorTools">
+			<button class="ql-bold">Bold</button>
+			<button class="ql-italic">Italic</button>
+		</div>
+		<div id="editorBox"></div>
+	</div>
+	<textarea id="sourceBox"></textarea>
+</section>
+
+<section id="toolPane">
+
+</section>
+
+<!-- Vendor Includes -->
+<script type="text/javascript" src="Assets/Scripts/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="Assets/Scripts/jquery-ui.min.js"></script>
+<script type="text/javascript" src="Assets/Scripts/angular.min.js"></script>
+<script type="text/javascript" src="Assets/Scripts/quill.min.js"></script>
+
+<script>
+	(function() {
+		var $sourceBox = $('#sourceBox');
+		var quill = new Quill(
+			'#editorBox',
+			{
+
+			}
+		);
+		quill.addModule('toolbar', {container: '#editorTools'});
+		quill.on('text-change', function(){$sourceBox.val(quill.getHTML());});
+		$sourceBox.keyup(function(){quill.setHTML($(this).val());});
+	})();
+
+	(function(){
+		$pane1 = $('#editorPane');
+		$pane2 = $('#toolPane');
+
+		function init()
+		{
+			$pane1.width('20%');
+			$pane2.width('78%');
+		}
+
+		init();
+	})();
+</script>
+</body>
+</html>
