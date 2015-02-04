@@ -1,0 +1,81 @@
+// Colors
+@outerBorderColor: #666666;
+@innerBorderColor: #777777;
+@uiElementBG: #F6F6F6;
+
+// Styles
+@outerBorder: 1px solid @outerBorderColor;
+@innerBorder: 1px solid @innerBorderColor;
+
+// HTML Blocks
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #DDD;
+  overflow: hidden;
+}
+
+header {
+  height: 32px;
+}
+
+// Generics
+.display-block {display: block;}
+.display-none {display: none;}
+
+// IDS
+#editorBox {
+  width: 200px;
+  height: 200px;
+}
+
+#editorPane,
+#toolPane {
+  position: absolute;
+  background: white;
+  border: @outerBorder;
+}
+
+#editorPane {
+  left: 0;
+  border-right: @outerBorder;
+}
+
+#toolPane{
+
+  border-width: 1px 0 0 1px;
+  right: 0;
+
+  a.hideLink, a.showLink {
+
+    background: @uiElementBG;
+    border: @innerBorder;
+
+    span {
+      padding: 4px;
+    }
+  }
+
+  a.hideLink {
+
+    border-width: 0 0 1px 0;
+
+    span {
+      border-right: @innerBorder;
+      display: inline-block;
+    }
+  }
+
+  a.showLink {
+    top: 0;
+    position: absolute;
+    text-align: center;
+    width: 1.4em;
+    border-width: 1px 0 1px 1px;
+
+    span {
+      display: block;
+    }
+  }
+}
+
