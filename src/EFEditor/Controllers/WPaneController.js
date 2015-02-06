@@ -4,6 +4,7 @@ EFEditor.Controllers.WPane = (function(){
   {
     self = this;
     self.prototype = EFEditor.Controllers.Base;
+
     function init()
     {
       self.eventTypes.INIT_BEFORE  = 'Pre-Initialization';

@@ -20,13 +20,16 @@ EFEditor.Utils.Misc = (function(){
       }
     }
 
+    init();
   }
-  s
+
   Misc.prototype.Browsers = {
     IE: 0,
     SAFARI: 1,
     OPERA: 2,
     CHROME: 3,
     FIREFOX: 4
-  }
+  };
+
+  return Misc;
 })();

@@ -1,21 +1,25 @@
-EFEditor.Utils.Keyboard = (function(){
+EFEditor.Utils.Keyboard = (function ()
+{
+  function  codeForBrowser(cr, ff, ie, op, sa)
+  {
+    var b = new EFEditor.Utils.Misc();
+    var a = b.Browsers;
+    switch (b.currentBrowser) {
+      case a.CHROME:
+        return cr;
+      case a.IE:
+        return ie;
+      case a.FIREFOX:
+        return ff;
+      case a.SAFARI:
+        return sa;
+      case a.OPERA:
+        return op;
+    }
+  }
+
   var Keyboard = {
-    codeForBrowser: function(cr, ff, ie, op, sa)
-    {
-      var a = EFEditor.Utils.Browsers;
-      switch (EFEditor.App.Utils.Misc.currentBrowser) {
-        case a.CHROME:
-          return cr;
-        case a.IE:
-          return ie;
-        case a.FIREFOX:
-          return ff;
-        case a.SAFARI:
-          return sa;
-        case a.OPERA:
-          return op;
-      }
-    },
+
 
     // Misc
     KEY_ESC:          27,
@@ -23,27 +27,33 @@ EFEditor.Utils.Keyboard = (function(){
     KEY_TAB:          9,
     KEY_INSERT:       45,
     KEY_DELETE:       46,
+    KEY_PAGE_UP:      33,
+    KEY_PAGE_DOWN:    34,
     KEY_HOME:         36,
     KEY_END:          35,
     KEY_PRINT_SCREEN: 0,
     KEY_PAUSE:        19,
+    KEY_ENTER:        13,
+
+    // ?
+    KEY_NUM_CENTER:    12,
 
     KEY_CAPS_LOCK:     20,
     KEY_NUM_LOCK:      144,
     KEY_SCROLL_LOCK:   145,
 
     // Symbols
-    KEY_DASH:          this.codeForBrowser(189, 173, 189, 45, 189),
-    KEY_COMMA:         this.codeForBrowser(188, 188, 188, 44, 188),
-    KEY_PERIOD:        this.codeForBrowser(190, 190, 190, 46, 190),
-    KEY_OPEN_BRACKET:  this.codeForBrowser(219, 219, 219, 91, 219),
+    KEY_DASH:          codeForBrowser(189, 173, 189, 45, 189),
+    KEY_COMMA:         codeForBrowser(188, 188, 188, 44, 188),
+    KEY_PERIOD:        codeForBrowser(190, 190, 190, 46, 190),
+    KEY_OPEN_BRACKET:  codeForBrowser(219, 219, 219, 91, 219),
     KEY_CLOSE_BRACKET: 221,
-    KEY_EQUALS_SIGN:   this.codeForBrowser(187, 61, 187, 61, 187),
-    KEY_FORWARD_SLASH: this.codeForBrowser(191, 191, 191, 47, 191),
+    KEY_EQUALS_SIGN:   codeForBrowser(187, 61, 187, 61, 187),
+    KEY_FORWARD_SLASH: codeForBrowser(191, 191, 191, 47, 191),
     KEY_BACK_SLASH:    220,
     KEY_APOSTROPHE:    222,
     KEY_GRAVE_ACCENT:  192,
-    KEY_SEMICOLON:     this.codeForBrowser(186, 59, 186, 59, 186),
+    KEY_SEMICOLON:     codeForBrowser(186, 59, 186, 59, 186),
 
     // F# Keys
     KEY_F1:            112,
@@ -84,7 +94,7 @@ EFEditor.Utils.Keyboard = (function(){
     KEY_NUM_9:         105,
 
     KEY_MULTIPLY:    106,
-    KEY_DIVIDE:      0,
+    KEY_DIVIDE:      111,
     KEY_ADD:         107,
     KEY_SUBTRACT:    109,
     KEY_DECIMAL:     110,
@@ -131,6 +141,6 @@ EFEditor.Utils.Keyboard = (function(){
     KEY_Z:     90
   };
 
-  Keyboard.
-  }
-})();
+  return Keyboard;
+})
+();
