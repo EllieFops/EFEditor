@@ -31,42 +31,10 @@
 <!-- Vendor Includes -->
 <script type="text/javascript" src="Assets/Scripts/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="Assets/Scripts/jquery-ui.min.js"></script>
-<script type="text/javascript" src="Assets/Scripts/angular.min.js"></script>
-<script type="text/javascript" src="Assets/Scripts/quill.js"></script>
 
 <script>
 	(function() {
 		var $sourceBox = $('#sourceBox');
-		var quill = new Quill(
-			'#editorBox',
-			{
-
-			}
-		);
-		quill.addModule('toolbar', {container: '#editorTools'});
-		quill.on('text-change', function() {
-			if (document.activeElement.id != 'sourceBox') {
-				$sourceBox.html(htmlencode(quill.getHTML()));
-			}
-		});
-
-		$sourceBox.keyup(function(){
-
-			var html = $(this).html();
-			var cleaned = $('<div>').html(html).text();
-			console.log(cleaned);
-			quill.setHTML(cleaned);
-		});
-
-		function htmlencode(str) {
-			return str.replace(/[&<>"']/g, function($0) {
-				return "&" + {"&":"amp", "<":"lt", ">":"gt", '"':"quot", "'":"#39"}[$0] + ";";
-			});
-		}
-		function htmldecode(str)
-		{
-//			return str.replace(/&lt;(?:t(?:d|r|able|body|head)|b|i|u|s(?:u(?:b|p)|pan)|div)(?:(?:\s+)(?:(?:class|id)=(&(?:quot|apos|#39);)\w+(?:\1)))*&gt;/g, function($))
-		}
 	})();
 
 	(function(){
