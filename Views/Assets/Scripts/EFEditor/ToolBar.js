@@ -1,0 +1,3 @@
+EFEditor.ToolBar = (function(){
+
+})();
