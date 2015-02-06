@@ -3,9 +3,9 @@ EFEditor.Document.Node = (function ()
   var self;
 
   /**
-   * @param element  {HTMLElement} Backing HTML element for this DocNode.
-   * @param parent   {DocNode}     Parent DocNode for this object.
-   * @param contents {Array}       Array of child nodes to initialize this DocNode with.
+   * @param element  {HTMLElement} Backing HTML element for this Node.
+   * @param parent   {Node}        Parent Node for this object.
+   * @param contents {Array}       Array of child nodes to initialize this Node with.
    *
    * @constructor
    */
@@ -14,35 +14,35 @@ EFEditor.Document.Node = (function ()
     self = this;
 
     /**
-     * Child DocNodes
+     * Child Nodes
      *
      * @type {Array}
      */
     self.children = [];
 
     /**
-     * Parent DocNode
+     * Parent Node
      *
-     * @type {DocNode}
+     * @type {Node}
      */
     self.parent = null;
 
     /**
-     * Backing HTMLElement of this DocNode
+     * Backing HTMLElement of this Node
      *
      * @type {HTMLElement}
      */
     self.element = null;
 
     /**
-     * Starting character position of this DocNode
+     * Starting character position of this Node
      *
      * @type {number}
      */
     self.startPosition = 0;
 
     /**
-     * Ending character postition of this DocNode
+     * Ending character postition of this Node
      *
      * @type {number}
      */
@@ -56,7 +56,7 @@ EFEditor.Document.Node = (function ()
     self.elementType = null;
 
     /**
-     * Attributes for this DocNode
+     * Attributes for this Node
      *
      * @type {{}}
      */
@@ -68,7 +68,7 @@ EFEditor.Document.Node = (function ()
       var nn = element.nodeName, i, e, a;
 
       if (!element instanceof HTMLElement || (nn != '#text' && !Config.whiteList[nn])) {
-        throw new Error('Invalid element passed to DocNode.');
+        throw new Error('Invalid element passed to Node.');
       }
 
       // Fetch attributes from HTML.
@@ -83,13 +83,13 @@ EFEditor.Document.Node = (function ()
 
       self.elementType = Elements[nn];
 
-      if (parent instanceof DocNode) {
+      if (parent instanceof Node) {
         self.parent = parent;
       }
 
       if (Array.isArray(contents)) {
         for (i = 0; i < contents.length; i++) {
-          if (contents[i] instanceof DocNode) {
+          if (contents[i] instanceof Node) {
             self.children.push()
           }
         }
@@ -122,7 +122,7 @@ EFEditor.Document.Node = (function ()
     }
     var total = 0;
     for (var c in self.children) {
-      if (!self.children.hasOwnProperty(c) || !(self.children[c] instanceof DocNode)) {
+      if (!self.children.hasOwnProperty(c) || !(self.children[c] instanceof Node)) {
         continue;
       }
       total += self.children[c].getTotalLength();
@@ -138,7 +138,7 @@ EFEditor.Document.Node = (function ()
    * @param s (int) Start Position
    * @param e (int) End Position
    *
-   * @returns {DocNode}
+   * @returns {Node}
    */
   Node.prototype.updatePositions = function (s, e)
   {
@@ -148,7 +148,7 @@ EFEditor.Document.Node = (function ()
   };
 
   /**
-   * Check whether or not a DocNode contains a given position.
+   * Check whether or not a Node contains a given position.
    *
    * @param p (int) Position to check.
    *
@@ -162,14 +162,14 @@ EFEditor.Document.Node = (function ()
   /**
    * Get the start position of a given node.  Returns -1 if node was not found.
    *
-   * @param n (DocNode) Node to check for.
+   * @param n (Node) Node to check for.
    *
    * @returns {number}
    */
   Node.prototype.findStartPositionOf = function (n)
   {
     var i;
-    if (!n instanceof DocNode) {
+    if (!n instanceof Node) {
       return -1;
     }
     i = self.children.indexOf(n);
@@ -180,7 +180,7 @@ EFEditor.Document.Node = (function ()
   };
 
   /**
-   * Check whether or not a DocNode contains a given selection.
+   * Check whether or not a Node contains a given selection.
    *
    * @param p {number} Start postition of the selection.
    * @param e {number} End position of the selection.
@@ -193,15 +193,15 @@ EFEditor.Document.Node = (function ()
   };
 
   /**
-   * Append a Child DocNode to the end of the children on this node.
+   * Append a Child Node to the end of the children on this node.
    *
-   * @param c {DocNode} Child node to add.
+   * @param c {Node} Child node to add.
    *
    * @returns {boolean}
    */
   Node.prototype.appendChild = function (c)
   {
-    if (c instanceof DocNode) {
+    if (c instanceof Node) {
       self.children.push(c);
       return true;
     }
@@ -214,15 +214,15 @@ EFEditor.Document.Node = (function ()
    *
    * @param p (int) Position for which to find the topmost node.
    *
-   * @returns DocNode
+   * @returns Node
    */
   Node.prototype.getNodeAt = function (p)
   {
     if (p < self.startPosition || p > self.endPosition) {
-      return (self.parent instanceof DocNode) ? self.parent.getNodeAt(p) : null;
+      return (self.parent instanceof Node) ? self.parent.getNodeAt(p) : null;
     }
     for (var c in self.children) {
-      if (!self.children.hasOwnProperty(c) || !self.children[c] instanceof DocNode) {
+      if (!self.children.hasOwnProperty(c) || !self.children[c] instanceof Node) {
         continue;
       }
       if (p < self.children[c].startPosition || p > self.children[c].endPosition) {
@@ -239,7 +239,7 @@ EFEditor.Document.Node = (function ()
    * @param s (int) Start position of selection.
    * @param e (int) End position of selection.
    *
-   * @return DocNode
+   * @return Node
    */
   Node.prototype.getNodeContaining = function (s, e)
   {
@@ -248,10 +248,10 @@ EFEditor.Document.Node = (function ()
       return (n.startPosition < s || n.endPosition < s || n.startPosition > e || n.endPosition > e);
     };
     if (check(self, s, e)) {
-      return (self.parent instanceof DocNode) ? self.parent.getNodeContaining(s, e) : null;
+      return (self.parent instanceof Node) ? self.parent.getNodeContaining(s, e) : null;
     }
     for (var c  in self.children) {
-      if (!self.children.hasOwnProperty(c) || !(self.children[c] instanceof DocNode)) {
+      if (!self.children.hasOwnProperty(c) || !(self.children[c] instanceof Node)) {
         continue;
       }
       if (check(self.children[c], s, e)) {
@@ -263,7 +263,7 @@ EFEditor.Document.Node = (function ()
 
   Node.prototype.breakNode = function (node, position, forward)
   {
-    if (!node instanceof DocNode || position) {
+    if (!node instanceof Node || position) {
       return false;
     }
   };
