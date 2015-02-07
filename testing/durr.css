@@ -3,10 +3,10 @@ body {overflow: hidden}
 	width: 20px;
 	height: 20px;
 	position: absolute;
+    left: 50%;
 	top: 50%;
 	margin-top: -20px;
 	margin-left: -20px;
-	left: 50%;
-	border: 10px solid rgb(24, 45, 98);
+	border: 10px double rgb(24, 45, 98);
 	display: none;
 }
