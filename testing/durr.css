@@ -7,6 +7,7 @@ body {overflow: hidden}
 	top: 50%;
 	margin-top: -20px;
 	margin-left: -20px;
-	border: 10px double rgb(24, 45, 98);
+	border: 10px dotted rgb(24, 45, 98);
 	display: none;
 }
+

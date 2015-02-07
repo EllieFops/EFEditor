@@ -5,13 +5,13 @@
 
 (function () {
 
-  var colorSpeed = 4;
-  var rotationSpeed = 12;
+  var colorSpeed = 2;
+  var rotationSpeed = 10;
 
   var squares = {
     size: 10,
     border: 10,
-    count: 3
+    count: 6
   };
 
   var currentKeys = {};
@@ -141,6 +141,8 @@
     rot += (isMovingForward()) ? rotationSpeed : -rotationSpeed;
     if (rot > 360) {
       rot -= 360;
+    } else if (rot < -360) {
+      rot += 360;
     }
     for (var g in groups) {
       if (!groups.hasOwnProperty(g)) {
@@ -150,7 +152,7 @@
       c = g.length;
       for (i = 0; i < c; i++) {
         a = rot * g[i].rm + g[i].rp;
-        g[i].el.style.setProperty('transform', 'rotate(' + a + 'deg)');
+        g[i].el.style.setProperty('transform', 'rotate(' + (Math.round(a*10) / 10) + 'deg)');
       }
     }
   }
