@@ -14,7 +14,10 @@
     count: 3
   };
 
-  var a = EFEditor.Utils.Keyboard;
+  var currentKeys = {};
+  var bx = 0, by = 0, tx, ty;
+  var rot = 0;
+  var Keys = EFEditor.Utils.Keyboard;
   var b = {};
   var running;
   var intervalProc;
@@ -29,9 +32,9 @@
 
   var body = document.getElementsByTagName('body')[0];
 
-  var k = {};
-  var bx = 0, by = 0, tx, ty;
-  var rot = 0;
+  body.addEventListener('keydown', function(event) {currentKeys[event.keyCode]=true;start();});
+  body.addEventListener('keyup', function(event) {currentKeys[event.keyCode] = false;});
+
   tx = window.innerWidth;
   ty = window.innerHeight;
 
@@ -67,17 +70,17 @@
   }
 
   function isMovingForward() {
-    var n = k[a.KEY_W], s = k[a.KEY_S], e = k[a.KEY_D], w = k[a.KEY_A], se = (s && e && !w), sw = (s && w), ne = (n && e && !s && !w), nw = (n && w && !s);
+    var n = currentKeys[Keys.KEY_W], s = currentKeys[Keys.KEY_S], e = currentKeys[Keys.KEY_D], w = currentKeys[Keys.KEY_A], se = (s && e && !w), sw = (s && w), ne = (n && e && !s && !w), nw = (n && w && !s);
     n = (n && !e && !s && !w), e = (e && !n && !s && !w), s = (s && !e && !w), w = (w && !s && !n);
     return ((n || e || se));
   }
 
   function isWASD() {
-    return (k[a.KEY_W] || k[a.KEY_A] || k[a.KEY_S] || k[a.KEY_D]);
+    return (currentKeys[Keys.KEY_W] || currentKeys[Keys.KEY_A] || currentKeys[Keys.KEY_S] || currentKeys[Keys.KEY_D]);
   }
 
   function loop() {
-    if (k[a.KEY_ESC]) {
+    if (currentKeys[Keys.KEY_ESC]) {
       running = false;
     }
     rotateSpaz();
@@ -154,10 +157,10 @@
 
   function move() {
     var u, d, r, l, i, c, ix, iy, q, t, s;
-    u = k[a.KEY_W];
-    d = k[a.KEY_S];
-    r = k[a.KEY_D];
-    l = k[a.KEY_A];
+    u = currentKeys[Keys.KEY_W];
+    d = currentKeys[Keys.KEY_S];
+    r = currentKeys[Keys.KEY_D];
+    l = currentKeys[Keys.KEY_A];
 
     var x;
     var v = 8;
