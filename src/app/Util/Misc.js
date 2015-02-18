@@ -31,5 +31,35 @@ EFEditor.Utils.Misc = (function(){
     FIREFOX: 4
   };
 
+  Misc.prototype.registerEvent = function(name)
+  {
+    var event; // The custom event that will be created
+
+    if (document.createEvent) {
+      event = document.createEvent("HTMLEvents");
+      event.initEvent(name, true, true);
+    } else {
+      event = document.createEventObject();
+      event.eventType = name;
+    }
+
+    return event;
+  };
+
+  Misc.prototype.hardMergeJSON = function(j1, j2, max, cur)
+  {
+    var a;
+    if (!cur) {cur = 0;}
+    for (a in j2) {
+      if (j2.hasOwnProperty(a)) {
+        if (typeof j2[a] == 'object' && j1[a] && typeof j1[a] == 'object' && (max <= 0 || (max > 0 && cur < max))) {
+          j1[a] = Misc.hardMergeJSON(j1[a], j2[a], max, (cur+1));
+        } else {
+          j1[a] = j2[a];
+        }
+      }
+    }
+  };
+
   return Misc;
 })();
