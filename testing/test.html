@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="durr.css">
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="test.css">
 </head>
 <body>
-    <div id="report" class="derp"></div>
-    <script>EFEditor = {Utils: {}};</script>
-    <script src="../src/app/Util/Misc.js"></script>
-    <script src="../src/app/Util/Keyboard.js"></script>
-    <script src="derp.js"></script>
+	<div id="report"></div>
+	<script data-main="../src/Templater.js" src="../vlibs/require.js"></script>
+	<script>
+		(function() {
+			var a = new EFEditor();
+			var b = a.initPane(document.getElementById('report'));
+		})();
+	</script>
 </body>
 </html>

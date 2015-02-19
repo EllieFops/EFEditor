@@ -1,23 +1,24 @@
 requirejs.config({
-  baseUrl: 'src/libs',
+  baseUrl: '../src/app',
   paths: {
-    app: 'src/app',
-    util: 'src/app/Util',
-    blocks: 'src/app/Document',
-    serv: 'src/app/Services',
-    doc: 'src/app/Document'
+    util: 'Util',
+    blocks: 'Document',
+    serv: 'Services',
+    doc: 'Document'
   }
 });
 
-var EFEditor = requirejs(
+var EFEditor;
+requirejs(
   [
-    'app/Controllers/WPane',
-    'util/Keyboard'
+    'Controllers/WPane',
+    'util/Keyboard',
+    'util/Misc'
   ],
-  function(pane, keyboard) {
+  function(pane, keyboard, util) {
     var self = this;
 
-    function EFEditor(configuration)
+    function Templater(configuration)
     {
       self.Keys = keyboard;
       self.config = {
@@ -43,15 +44,10 @@ var EFEditor = requirejs(
 
       function init()
       {
-        var a;
-        for (a in configuration) {
-          if (configuration.hasOwnProperty(a)) {
-            self.config[a] = configuration[a];
-          }
-        }
+        util.hardMergeJSON(self.config, configuration);
       } init();
 
-      self.initPane = function(domEl, configuration)
+      self.initPane = function(domEl)
       {
         if (typeof domEl == 'string') {
           domEl = document.getElementById(domEl);
@@ -61,10 +57,10 @@ var EFEditor = requirejs(
           throw Error('Invalid Element or ID passed to EFEditor init.');
         }
 
-        return new pane(domEl, configuration);
+        return new pane(domEl, self.config);
       };
     }
-    return EFEditor;
+    EFEditor = Templater;
   }
 );
 var

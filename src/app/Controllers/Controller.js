@@ -135,4 +135,4 @@ define([], function ()
   }
 
   return Base;
-})();
+});

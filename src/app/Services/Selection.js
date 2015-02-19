@@ -1,6 +1,6 @@
 define(
   [
-    'app/Document/Selection'
+    'doc/Selection'
   ],
   function (selBase)
   {
