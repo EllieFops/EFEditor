@@ -1,3 +1,0 @@
-EFEditor.ToolBar = (function(){
-
-})();
