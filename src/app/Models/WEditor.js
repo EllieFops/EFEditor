@@ -16,10 +16,10 @@ efe.interface.WEditor = (function() {
     element = e;
     this.selection = null;
 
-    e.getElement().addEventListener(DomEvents.MOUSE_MOVE, bbMouseMoveEvent);
-    e.getElement().addEventListener(DomEvents.MOUSE_OUT,  bbMouseOutEvent);
-    e.getElement().addEventListener(DomEvents.MOUSE_DOWN, bbMouseDownEvent);
-    e.getElement().addEventListener(DomEvents.MOUSE_UP,   bbMouseUpEvent);
+    e.getElement().addEventListener(DOMEvents.MOUSE_MOVE, bbMouseMoveEvent);
+    e.getElement().addEventListener(DOMEvents.MOUSE_OUT,  bbMouseOutEvent);
+    e.getElement().addEventListener(DOMEvents.MOUSE_DOWN, bbMouseDownEvent);
+    e.getElement().addEventListener(DOMEvents.MOUSE_UP,   bbMouseUpEvent);
   }
 
   WEditor.prototype.initEvents = function(e)

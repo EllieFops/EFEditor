@@ -26,9 +26,9 @@ efe.input.EFMouse = (function(){
 
   function constructor()
   {
-    document.addEventListener(DomEvents.MOUSE_MOVE, updatePosition);
-    document.addEventListener(DomEvents.MOUSE_UP,   buttonUp);
-    document.addEventListener(DomEvents.MOUSE_DOWN, buttonDown);
+    document.addEventListener(DOMEvents.MOUSE_MOVE, updatePosition);
+    document.addEventListener(DOMEvents.MOUSE_UP,   buttonUp);
+    document.addEventListener(DOMEvents.MOUSE_DOWN, buttonDown);
   }
 
   /**

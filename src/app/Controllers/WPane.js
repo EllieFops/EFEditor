@@ -8,13 +8,13 @@ var WPane = (function() {
     self = this;
     self.prototype = new Controller();
     self.prototype.handles = [
-      {event: DomEvents.CLICK,     method: self.prototype.handleClick},
-      {event: DomEvents.DBLCLICK,  method: self.prototype.handleDblClick},
-      {event: DomEvents.MOUSE_UP,  method: self.prototype.handleMouseUp},
-      {event: DomEvents.FOCUS_IN,  method: self.prototype.handleFocusIn},
-      {event: DomEvents.INPUT,     method: self.prototype.handleInput},
-      {event: DomEvents.KEY_UP,    method: self.prototype.handleKeyUp},
-      {event: DomEvents.KEY_PRESS, method: self.prototype.handleKeyPress},
+      {event: DOMEvents.CLICK,     method: self.prototype.handleClick},
+      {event: DOMEvents.DBLCLICK,  method: self.prototype.handleDblClick},
+      {event: DOMEvents.MOUSE_UP,  method: self.prototype.handleMouseUp},
+      {event: DOMEvents.FOCUS_IN,  method: self.prototype.handleFocusIn},
+      {event: DOMEvents.INPUT,     method: self.prototype.handleInput},
+      {event: DOMEvents.KEY_UP,    method: self.prototype.handleKeyUp},
+      {event: DOMEvents.KEY_PRESS, method: self.prototype.handleKeyPress},
       {event: EFEvents.SEL_CHANGE, method: self.prototype.handleSelChange}
     ];
   }

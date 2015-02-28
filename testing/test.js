@@ -325,7 +325,7 @@ var TablePlacer = function(s) {
   {
     var f, t;
     f = new MouseFollower(element);
-    f.registerCallback(DomEvents.CLICK, function(e) {
+    f.registerCallback(DOMEvents.CLICK, function(e) {
       var t, o;
       t = $(e.target);
       o = t.offset();
