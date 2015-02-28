@@ -8,10 +8,11 @@
 	<link href="../Assets/Styles/style.css" rel="stylesheet">
 </head>
 <body>
-	<div id="toolbar">
-		<ul class="toolSet">
+	<div id="toolbar" class="gradient">
+		<ul class="toolSet toolbar">
 			<li><a href="#" class="icon-floppy-disk" title="Save Template"></a></li>
 			<li><a href="#" class="icon-folder-open" title="Load Template"></a></li>
+			<li><a href="#" class="icon-cog" title="Settings"></a></li>
 			<li class="separator">|</li>
 
 			<li><a href="#" class="icon-undo" title="Undo Action"></a></li>
@@ -21,59 +22,22 @@
 			<li><a href="#" class="icon-paste" title="Paste From Clipboard"></a></li>
 			<li class="separator">|</li>
 
-			<li><a href="#" class="icon-bold" title="Bold"></a></li>
-			<li><a href="#" class="icon-italic" title="Italic"></a></li>
-			<li><a href="#" class="icon-underline" title="Underline"></a></li>
-			<li><a href="#" class="icon-strikethrough" title="Strikethrough"></a></li>
-			<li><a href="#" class="icon-subscript2" title="Subscript"></a></li>
-			<li><a href="#" class="icon-superscript2" title="Superscript"></a></li>
-			<li class="separator">|</li>
-
-			<li><a href="#" class="icon-paragraph-left" title="Align Left"></a></li>
-			<li><a href="#" class="icon-paragraph-center" title="Align Center"></a></li>
-			<li><a href="#" class="icon-paragraph-justify" title="Justify"></a></li>
-			<li><a href="#" class="icon-paragraph-right" title="Alight Right"></a></li>
-			<li class="separator">|</li>
-
-			<li><a href="#" class="icon-font" title="Change Font"></a></li>
-			<li><a href="#" class="icon-font-size" title="Change Text Size"></a></li>
-			<li><a href="#" class="icon-text-color red" title="Change Text Color"></a></li>
-			<li class="separator">|</li>
-
-			<li><a href="#" class="icon-indent-increase" title="Increase Indent"></a></li>
-			<li><a href="#" class="icon-indent-decrease" title="Decrease Indent"></a></li>
-			<li class="separator">|</li>
-
 			<li>
-				<a href="#" class="icon-circle-down">Insert</a>
-				<ul style="position: absolute; z-index: 100">
-					<li><a href="#" class="icon-list" title="Insert List"></a></li>
-					<li><a href="#" class="icon-list-numbered" title="Insert Numbered List"></a></li>
-					<li><a href="#" class="icon-table2" title="Create Table"></a></li>
-					<li><a href="#" class="icon-image" title="Insert Image"></a></li>
-					<li><a href="#" class="icon-page-break" title="Insert Page Break"></a></li>
+				<a href="#" class="icon-circle-down group-title subMenu"><span class="icon-buffer">Insert</span></a>
+				<ul>
+					<li><a href="#" class="icon-list" title="Insert List">List</a></li>
+					<li><a href="#" class="icon-list-numbered" title="Insert Numbered List">Numbered List</a></li>
+					<li><a href="#" class="icon-table2" title="Create Table">Table</a></li>
+					<li><a href="#" class="icon-image" title="Insert Image">Image</a></li>
+					<li><a href="#" class="icon-page-break" title="Insert Page Break">Page Break</a></li>
 				</ul>
 			</li>
-		</ul>
-	</div>
-	<div id="editorBody">
-		<div id="paneSet">
-			<ul id="paneTabs">
-				<li><span data-tab="wPane">WYSIWYG</span></li>
-				<li><span data-tab="sPane">Source</span></li>
-				<li><span data-tab="pPane">Preview</span></li>
-			</ul>
-			<div id="wPane" contenteditable="true"></div>
-			<div id="sPane" contenteditable="true"></div>
-			<div id="pPane"></div>
-		</div>
-		<div id="tPane">
-			<ul>
-				<li>
-					<h3 class="icon-circle-down"><span class="group-title">Data Fields</span></h3>
+			<li>
+				<a class="icon-circle-down group-title subMenu"><span class="icon-buffer">Data Fields</span></a>
+				<div class="shiftList">
 					<ul>
 						<li>
-							<h4 class="icon-circle-down"><span class="group-title">School Fields</span></h4>
+							<a class="icon-circle-right group"><span class="icon-buffer">School Fields</span></a>
 							<ul>
 								<li><span class="insert" draggable="true">Title</span></li>
 								<li><span class="insert" draggable="true">Principal</span></li>
@@ -82,7 +46,7 @@
 							</ul>
 						</li>
 						<li>
-							<h4 class="icon-circle-down"><span class="group-title">Date</span></h4>
+							<a class="icon-circle-right group"><span class="icon-buffer">Date</span></a>
 							<ul>
 								<li><span class="insert" draggable="true">Current Date</span></li>
 								<li><span class="insert" draggable="true">Current Year</span></li>
@@ -91,12 +55,12 @@
 							</ul>
 						</li>
 						<li>
-							<h4 class="icon-circle-down"><span class="group-title">Student Fields</span></h4>
+							<a class="icon-circle-right group"><span class="icon-buffer">Student Fields</span></a>
 							<ul>
-								<li><span class="insert" draggable="true">Student ID</span></li>
 								<li>
-									<h5 class="icon-circle-down"><span class="group-title">Demographic</span></h5>
+									<a class="icon-circle-right group"><span class="icon-buffer">Demographic</span></a>
 									<ul>
+										<li><span class="insert" draggable="true">Student ID</span></li>
 										<li><span class="insert" draggable="true">Full Name</span></li>
 										<li><span class="insert" draggable="true">First Name</span></li>
 										<li><span class="insert" draggable="true">Last Name</span></li>
@@ -106,103 +70,120 @@
 									</ul>
 								</li>
 								<li>
-									<h5 class="icon-circle-down"><span class="group-title">Enrollment</span></h5>
+									<a class="icon-circle-right group"><span class="icon-buffer">Enrollment</span></a>
 									<ul>
 										<li><span class="insert" draggable="true">Grade Level</span></li>
 									</ul>
 								</li>
 								<li>
-									<h5 class="icon-circle-down"><span class="group-title">Schedule</span></h5>
+									<a class="icon-circle-right group"><span class="icon-buffer">Schedule</span></a>
 									<ul>
 										<li><span class="insert" draggable="true">Homeroom</span></li>
 									</ul>
 								</li>
 							</ul>
 						</li>
-						<li><span class="insert" draggable="true">Custom Column</span></li>
+						<li>
+							<a class="icon-circle-right group"><span class="icon-buffer">Other</span></a>
+							<ul>
+								<li><span class="insert" draggable="true">Custom Column</span></li>
+							</ul>
+						</li>
 					</ul>
-				</li>
-				<li>
-					<h3 class="icon-circle-down"><span class="group-title">Table Data</span></h3>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div id="editorBody">
+		<div id="paneSet">
+			<ul id="paneTabs">
+				<li><span data-tab="wPane" class="gradient">WYSIWYG</span></li>
+				<li><span data-tab="sPane" class="gradient">Source</span></li>
+				<li><span data-tab="pPane" class="gradient">Preview</span></li>
+			</ul>
+			<div id="wPane">
+				<div id="contextToolbar" class="gradient">
+					<ul class="toolbar">
+						<li><a class="icon-bold" title="Bold"></a></li>
+						<li><a class="icon-italic" title="Italic"></a></li>
+						<li><a class="icon-underline" title="Underline"></a></li>
+						<li><a class="icon-strikethrough" title="Strikethrough"></a></li>
+						<li><a class="icon-subscript2" title="Subscript"></a></li>
+						<li><a class="icon-superscript2" title="Superscript"></a></li>
+						<li class="separator">|</li>
+
+						<li><a class="icon-paragraph-left" title="Align Left"></a></li>
+						<li><a class="icon-paragraph-center" title="Align Center"></a></li>
+						<li><a class="icon-paragraph-justify" title="Justify"></a></li>
+						<li><a class="icon-paragraph-right" title="Alight Right"></a></li>
+						<li class="separator">|</li>
+
+						<li><a class="icon-font" title="Change Font"></a></li>
+						<li><a class="icon-font-size" title="Change Text Size"></a></li>
+						<li><a class="icon-text-color red" title="Change Text Color"></a></li>
+						<li class="separator">|</li>
+
+						<li><a class="icon-indent-increase" title="Increase Indent"></a></li>
+						<li><a class="icon-indent-decrease" title="Decrease Indent"></a></li>
+						<li class="separator">|</li>
+					</ul>
+				</div>
+				<div id="editorContent"></div>
+				<div id="tPane">
 					<ul>
 						<li>
-							Marking Periods:
-							<span class="insert" draggable="true">Columns</span>
-							<span class="insert" draggable="true">Rows</span>
-						</li>
-						<li>
-							Courses:
-							<span class="insert" draggable="true">Columns</span>
-							<span class="insert" draggable="true">Rows</span>
-						</li>
-						<li>
-							Sections:
-							<span class="insert" draggable="true">Columns</span>
-							<span class="insert" draggable="true">Rows</span>
-						</li>
-						<li>
-							Standards:
-							<span class="insert" draggable="true">Columns</span>
-							<span class="insert" draggable="true">Rows</span>
-						</li>
-						<li>
-							School Periods:
-							<span class="insert" draggable="true">Columns</span>
-							<span class="insert" draggable="true">Rows</span>
+							<h3 class="icon-circle-down gradient"><span class="group-title">Table Data</span></h3>
+							<ul>
+								<li>
+									Marking Periods:
+									<span class="insert" draggable="true">Columns</span>
+									<span class="insert" draggable="true">Rows</span>
+								</li>
+								<li>
+									Courses:
+									<span class="insert" draggable="true">Columns</span>
+									<span class="insert" draggable="true">Rows</span>
+								</li>
+								<li>
+									Sections:
+									<span class="insert" draggable="true">Columns</span>
+									<span class="insert" draggable="true">Rows</span>
+								</li>
+								<li>
+									Standards:
+									<span class="insert" draggable="true">Columns</span>
+									<span class="insert" draggable="true">Rows</span>
+								</li>
+								<li>
+									School Periods:
+									<span class="insert" draggable="true">Columns</span>
+									<span class="insert" draggable="true">Rows</span>
+								</li>
+							</ul>
 						</li>
 					</ul>
-				</li>
-			</ul>
+				</div>
+			</div>
+			<div id="sPane" contenteditable="true"></div>
+			<div id="pPane"></div>
 		</div>
 	</div>
 	<script src="jquery-2.1.3.min.js"></script>
 	<script src="jquery-ui.min.js"></script>
+	<script src="../src/app/Models/EFElement.js"></script>
+	<script src="../src/app/Models/DomEvents.js"></script>
+	<script src="../src/app/Services/DOMHelper.js"></script>
+	<script src="../src/app/Services/JSONHelper.js"></script>
+	<script src="../src/app/Services/ElementFactory.js"></script>
+	<script src="../src/app/Models/Configuration.js"></script>
+	<script src="../src/app/Models/EFBoundingBox.js"></script>
+	<script src="../src/app/Models/Position.js"></script>
+	<script src="../src/app/Models/EFMouse.js"></script>
+	<script src="../src/app/Models/WEditor.js"></script>
+	<script src="test.js"></script>
+	<script src="work.js"></script>
 	<script>
-		(function() {
-			var $toolbar = $('#toolbar');
-			var $wPane   = $('#wPane');
-			var $sPane   = $('#sPane');
-			var $pPane   = $('#pPane');
-			var $paneSet = $('#paneSet');
-			var $tPane   = $('#tPane');
-			var $window  = $(window);
-			var $tabs    = $('#paneTabs span');
 
-			// Setup Screen
-			(function() {
-				var $paneTabs = $('paneTabs');
-				var bodyHeight = $window.height()-$toolbar.outerHeight();
-				var bodyWidth  = $window.width()-$tPane.outerWidth();
-				var paneHeight = bodyHeight - $paneTabs.outerHeight();
-				$('#editorBody').height(bodyHeight);
-				$paneSet.width(bodyWidth);
-				$wPane.height(paneHeight);
-				$sPane.height(paneHeight).hide();
-				$pPane.height(paneHeight).hide();
-
-				$tabs.each(function(i, e){
-					console.log(e);
-					e = $(e);
-					e.on('click', paneTabClick);
-					if(e.data('tab') == 'wPane') {
-						e.addClass('selTab')
-					}
-				});
-			})();
-
-			function paneTabClick() {
-				var $this = $(this);
-				$tabs.removeClass('selTab');
-				$this.addClass('selTab')
-				$wPane.hide();
-				$sPane.hide();
-				$pPane.hide();
-				$('#' + $this.data('tab')).show();
-			}
-			$('ul ul').css('display', 'none').siblings().on('click', function() {
-				$(this).toggleClass('icon-circle-down').toggleClass('icon-circle-up').siblings('ul').slideToggle();
-			});
-		})();
 	</script>
 </body>
 </html>

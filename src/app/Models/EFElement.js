@@ -1,255 +1,155 @@
-(function ()
+var EFElement = (function ()
 {
-  var self;
 
   /**
    *
-   * @param tag      {string}
-   * @param title    {string}
-   * @param type     {int}
-   * @param parent   {EFElement}
-   * @param children {Array}
+   * @param element {HTMLElement}
+   *
    * @constructor
    */
-  function EFElement(tag, title, type, parent, children)
+  function EFElement(element)
   {
-    self = this;
-
-    /**
-     * HTML Tag String
-     *
-     * @type {string}
-     */
-    self.tag = '';
-
-    /**
-     * Tag Title String
-     *
-     * @type {string}
-     */
-    self.title = '';
-
-    /**
-     * Element Type
-     *
-     * @type {int}
-     */
-    self.type = null;
-
-    /**
-     *
-     * @type {Array}
-     */
-    self.requires = [];
-
-    /**
-     * Alias Data
-     * @type {Object}
-     */
-    self.alias = null;
-
-    /**
-     * Child Elements
-     *
-     * @type {Array}
-     */
-    self.children = [];
-
-    /**
-     * Parent Node
-     *
-     * @type {EFElement}
-     */
-    self.parent = null;
-
-    /**
-     * Starting character position of this Node
-     *
-     * @type {number}
-     */
-    self.startPosition = 0;
-
-    /**
-     * Ending character position of this Node
-     *
-     * @type {number}
-     */
-    self.endPosition = 0;
-
-    /**
-     * Element Attributes
-     *
-     * @type {{}}
-     */
-    self.attributes = {};
-
-    function init()
-    {
-      self.tag = (tag && typeof tag == 'string') ? tag : '#text';
-      self.title = (title && typeof title == 'string') ? title : 'Text Element';
-      self.type = (type && typeof type == 'number') ? type : BlockType.INLINE;
-      self.parent = (parent && parent instanceof EFElement) ? parent : null;
-      self.children = (children && children instanceof Array) ? children : [];
+    if (!element instanceof HTMLElement) {
+      throw Error('EFElement Constructor requires valid HTMLElement.');
     }
-
-    init();
+    this.e = element;
+    this.childElements = [];
+    this.parent = null;
+    this.startPosition = 0;
+    this.endPosition = 0;
   }
 
   /**
-   * Get Element Title
    *
-   * @returns {string}
-   */
-  EFElement.prototype.getTitle = function ()
-  {
-    return self.title;
-  };
-
-  /**
-   * Set Element Title
-   *
-   * @param title {string}
-   *
-   * @returns {EFElement}
-   */
-  EFElement.prototype.setTitle = function (title)
-  {
-    EFElement.prototype.title = title;
-    return self;
-  };
-
-  /**
-   * Get Element Type
-   *
-   * @returns {int}
+   * @returns {string|nodeName}
    */
   EFElement.prototype.getType = function ()
   {
-    return self.type;
+    return this.e.nodeName
   };
 
   /**
-   * Set Element Type
    *
-   * @param type {int}
+   * @returns {string|n._newInst.id|*|id|ui.selectmenu._drawMenu.id|._drawMenu.id}
+   */
+  EFElement.prototype.getId = function ()
+  {
+    return this.e.id
+  };
+
+  /**
    *
+   * @param n
    * @returns {EFElement}
    */
-  EFElement.prototype.setType = function (type)
+  EFElement.prototype.setId = function (n)
   {
-    EFElement.prototype.type = type;
-    return self;
+    this.e.id = n;
+    return this
   };
 
   /**
-   * Get Element Tag Text
    *
-   * @returns {string}
+   * @returns {DOMTokenList}
    */
-  EFElement.prototype.getTag = function ()
+  EFElement.prototype.getClasses = function ()
   {
-    return self.tag;
+    return this.e.classList
   };
 
   /**
-   * Get Required Parent Elements
    *
-   * @returns {Array}
-   */
-  EFElement.prototype.getRequires = function ()
-  {
-    return self.requires;
-  };
-
-  /**
-   * Set Required Parent Elements
-   *
-   * @param requires {[]}
+   * @param a
    * @returns {EFElement}
    */
-  EFElement.prototype.setRequires = function (requires)
+  EFElement.prototype.addClass = function (a)
   {
-    EFElement.prototype.requires = requires;
-    return self;
+    this.e.classList.add(a);
+    return this
   };
 
   /**
-   * Check if this element has a preferred Alias
    *
+   * @param a
+   * @returns {EFElement}
+   */
+  EFElement.prototype.dropClass = function (a)
+  {
+    this.e.classList.remove(a);
+    return this
+  };
+
+  /**
+   *
+   * @param a
    * @returns {boolean}
    */
-  EFElement.prototype.hasAlias = function ()
+  EFElement.prototype.hasClass = function (a)
   {
-    return (EFElement.prototype.alias == null);
+    return this.e.classList.contains(a)
   };
 
   /**
-   * Get this element's preferred alias.
    *
-   * @returns {object}
+   * @param a
+   * @returns {*|string}
    */
-  EFElement.prototype.getAlias = function ()
+  EFElement.prototype.getAttribute = function (a)
   {
-    return self.alias;
+    return this.e.getAttribute(a)
   };
 
   /**
-   * Set this element's preferred alias.
    *
-   * @param alias
+   * @param a
+   * @param v
    * @returns {EFElement}
    */
-  EFElement.prototype.setAlias = function (alias)
+  EFElement.prototype.setAttribute = function (a, v)
   {
-    EFElement.prototype.alias = alias;
-    return self;
+    this.e.setAttribute(a, v);
+    return this
   };
 
   /**
-   * Set Tag Attribute
+   * Set Collection of Attributes
    *
-   * @param key   {string} Attribute name
-   * @param value {string} Attribute value
+   * @param a {{}}
    *
-   * @returns {*}
+   * @returns {EFElement}
    */
-  EFElement.prototype.setTagAttribute = function (key, value)
+  EFElement.prototype.setAttributes = function (a)
   {
-    self.attributes[key] = value;
-    return self;
+    for (var i in a) {
+      if (a.hasOwnProperty(i)) {
+        this.e.setAttribute(i, a[i]);
+      }
+    }
+    return this;
   };
 
   /**
-   * Get the total text length of this node including all child nodes.
    *
-   * @returns {int}
+   * @returns {number}
    */
-  EFElement.prototype.getTotalLength = function ()
+  EFElement.prototype.getInnerLength = function ()
   {
-    return (self.element) ? self.element.innerText.length : 0;
+    return this.e.innerText.length
   };
 
   /**
-   * Get the character count for just this node, excluding text from child nodes.
    *
-   * @returns {int}
+   * @returns {number}
    */
   EFElement.prototype.getNodeLength = function ()
   {
-    if (!self.element) {
-      return 0;
+    var a, b, i;
+    a = this.e.innerText.length;
+    b = this.children;
+    for (i = 0; i < b.length; i++) {
+      a -= b[i].getInnerLength()
     }
-    if (self.children.length == 0) {
-      return self.getTotalLength();
-    }
-    var total = 0;
-    for (var c in self.children) {
-      if (!self.children.hasOwnProperty(c) || !(self.children[c] instanceof Element)) {
-        continue;
-      }
-      total += self.children[c].getTotalLength();
-    }
-    return self.element.innerText.length - total;
+    return a;
   };
 
   /**
@@ -264,9 +164,9 @@
    */
   EFElement.prototype.updatePositions = function (s, e)
   {
-    self.startPosition = s;
-    self.endPosition = e;
-    return self;
+    this.startPosition = s;
+    this.endPosition = e;
+    return this;
   };
 
   /**
@@ -278,7 +178,7 @@
    */
   EFElement.prototype.containsPosition = function (p)
   {
-    return (self.startPosition > p && self.endPosition < p);
+    return (this.startPosition > p && this.endPosition < p);
   };
 
   /**
@@ -294,11 +194,11 @@
     if (!n instanceof Node) {
       return -1;
     }
-    i = self.children.indexOf(n);
+    i = this.children.indexOf(n);
     if (i == -1) {
       return i;
     }
-    return self.children[i].startPosition;
+    return this.children[i].startPosition;
   };
 
   /**
@@ -311,7 +211,7 @@
    */
   EFElement.prototype.containsSelection = function (p, e)
   {
-    return (self.containsPosition(p) && self.containsPosition(e));
+    return (this.containsPosition(p) && this.containsPosition(e));
   };
 
   /**
@@ -324,7 +224,8 @@
   EFElement.prototype.appendChild = function (c)
   {
     if (c instanceof EFElement) {
-      self.children.push(c);
+      this.childElements.push(c);
+      this.e.appendChild(c.getElement());
       return true;
     }
     return false;
@@ -340,19 +241,19 @@
    */
   EFElement.prototype.getNodeAt = function (p)
   {
-    if (p < self.startPosition || p > self.endPosition) {
-      return (self.parent instanceof EFElement) ? self.parent.getNodeAt(p) : null;
+    if (p < this.startPosition || p > this.endPosition) {
+      return (this.parent instanceof EFElement) ? this.parent.getNodeAt(p) : null;
     }
-    for (var c in self.children) {
-      if (!self.children.hasOwnProperty(c) || !self.children[c] instanceof EFElement) {
+    for (var c in this.children) {
+      if (!this.children.hasOwnProperty(c) || !this.children[c] instanceof EFElement) {
         continue;
       }
-      if (p < self.children[c].startPosition || p > self.children[c].endPosition) {
+      if (p < this.children[c].startPosition || p > this.children[c].endPosition) {
         continue;
       }
-      self.children[c].getNodeAt(p);
+      this.children[c].getNodeAt(p);
     }
-    return self;
+    return this;
   };
 
   /**
@@ -369,20 +270,27 @@
     {
       return (n.startPosition < s || n.endPosition < s || n.startPosition > e || n.endPosition > e);
     };
-    if (check(self, s, e)) {
-      return (self.parent instanceof EFElement) ? self.parent.getNodeContaining(s, e) : null;
+    if (check(this, s, e)) {
+      return (this.parent instanceof EFElement) ? this.parent.getNodeContaining(s, e) : null;
     }
-    for (var c  in self.children) {
-      if (!self.children.hasOwnProperty(c) || !(self.children[c] instanceof EFElement)) {
+    for (var c  in this.children) {
+      if (!this.children.hasOwnProperty(c) || !(this.children[c] instanceof EFElement)) {
         continue;
       }
-      if (check(self.children[c], s, e)) {
-        return self.children[c].getNodeContaining(s, e);
+      if (check(this.children[c], s, e)) {
+        return this.children[c].getNodeContaining(s, e);
       }
     }
-    return self;
+    return this;
   };
 
+  /**
+   *
+   * @param node
+   * @param position
+   * @param forward
+   * @returns {boolean}
+   */
   EFElement.prototype.breakNode = function (node, position, forward)
   {
     console.log(forward);
@@ -391,9 +299,33 @@
     }
   };
 
-  EFElement.prototype.setElement = function(element)
+  /**
+   *
+   * @param z
+   * @returns {EFElement}
+   */
+  EFElement.prototype.setElement = function (z)
   {
-    self.element = element;
+    this.e = z;
+    return this
+  };
+
+  /**
+   *
+   * @returns {HTMLElement}
+   */
+  EFElement.prototype.getElement = function ()
+  {
+    return this.e
+  };
+
+  /**
+   *
+   * @returns {Array}
+   */
+  EFElement.prototype.getChildren = function()
+  {
+    return this.childElements;
   };
 
   return EFElement;

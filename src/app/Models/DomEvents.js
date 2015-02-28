@@ -29,6 +29,7 @@ var DomEvents = {
   MOUSE_DOWN: 'mousedown',
   MOUSE_ENTER: 'mouseenter',
   MOUSE_OVER: 'mouseover',
+  MOUSE_OUT: 'mouseout',
   MOUSE_LEAVE: 'mouseleave',
   MOUSE_MOVE: 'mousemove',
   PASTE: 'paste',
