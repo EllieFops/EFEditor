@@ -1,5 +1,9 @@
 // Namespace: efe.input
-efe = efe || {}; efe.input = efe.input || {};
+if(typeof efe == "undefined") {
+  efe = {input:{}};
+} else if(typeof efe.input == "undefined") {
+  efe.input = {};
+}
 
 /**
  * Mouse Information Object
@@ -38,8 +42,8 @@ efe.input.EFMouse = (function(){
    */
   function updatePosition(e)
   {
-    position.setXPos(e.x);
-    position.setYPos(e.y);
+    position.setXPos(e.clientX);
+    position.setYPos(e.clientY);
   }
 
   /**

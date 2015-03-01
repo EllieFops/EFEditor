@@ -1,3 +1,4 @@
+// Namespace
 var DOMEvents = {
   AFTER_PRINT: 'afterprint',
   BEFORE_PRINT: 'beforeprint',

@@ -106,7 +106,7 @@ var wEditor;
   var $tPane   = $('#tPane');
   var $window  = $(window);
   var $tabs    = $('#paneTabs').find('span');
-  wEditor  = new WEditor(
+  wEditor  = new efe.interface.WEditor(
     new EFElement(
       document.getElementById('editorContent')
     )
@@ -121,8 +121,8 @@ var wEditor;
   $toolbar.on('click', '.icon-table2', function(e) {
     var tab;
     tab = new TableSelection();
-    tab.setXPos(e.originalEvent.x);
-    tab.setYPos(e.originalEvent.y);
+    tab.setXPos(e.originalEvent.clientX);
+    tab.setYPos(e.originalEvent.clientY);
     tab.show();
   });
 

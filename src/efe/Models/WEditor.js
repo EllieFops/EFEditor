@@ -1,5 +1,9 @@
 // Namespace: efe.interface
-efe=efe||{};efe.interface=efe.interface||{};
+if(typeof efe == "undefined") {
+  efe = {interface:{}};
+} else if(typeof efe.interface == "undefined") {
+  efe.interface = {};
+}
 
 efe.interface.WEditor = (function() {
 
@@ -9,6 +13,9 @@ efe.interface.WEditor = (function() {
   var sizeClicked = false;
   var clickedBB   = null;
   var element     = null;
+
+  var currentlyOver;
+  var d;
 
 
   function WEditor(e)
@@ -34,7 +41,11 @@ efe.interface.WEditor = (function() {
    */
   function bbMouseMoveEvent(e)
   {
-    var b, c, z, a, d;
+    var b, c, z, a;
+
+    if (sizeClicked) {
+      sizeClicked = efe.input.EFMouse.isLeftButton();
+    }
 
     if (!sizeClicked) {
       for (a in bBoxes) {
@@ -53,6 +64,7 @@ efe.interface.WEditor = (function() {
         return;
       }
 
+      currentlyOver = b;
       z = element.getElement().style;
 
       if ((d.top && d.left) || (d.bottom && d.right)) {
@@ -66,37 +78,64 @@ efe.interface.WEditor = (function() {
       }
     }
 
-    if (efe.input.EFMouse.isLeftButton()) {bbResizeEvent(e, b)}
+    if (efe.input.EFMouse.isLeftButton()) {bbResizeEvent(e)}
   }
 
-  function bbResizeEvent(e, b)
+  function bbResizeEvent(e)
   {
-    var el, controlStyle, ie, x, y, elementRect, elementStyle, t;
+    var el, controlStyle, ie, x, y, elementRect, elementStyle, controlRect, editorRect;
+
     if (!clickedBB) {return}
     el = clickedBB.getElement();
     ie = clickedBB.getChildren()[0].getElement();
+    editorRect  = element.getElement().getBoundingClientRect();
     elementRect = ie.getBoundingClientRect();
+    controlRect = el.getBoundingClientRect();
     controlStyle = el.style;
     elementStyle = ie.style;
-    x = e.movementX;
-    y = e.movementY;
+    x = e.movementX || e.mozMovementX;
+    y = e.movementY || e.mozMovementY;
 
-    if (b.t) {
-      t = elementRect.height;
-      elementStyle.height = (elementRect.height - y) + 'px';
-      if (elementRect.height != t) {
-        controlStyle.top = (el.offsetTop + y) + 'px';
+    if (d.top && controlRect.top >= editorRect.top) {
+      if ((controlRect.top + y) < editorRect.top) {
+        y = 0 - ((controlRect.top - editorRect.top));
       }
-    } else if ((b.b)) {
       elementStyle.height = (elementRect.height - y) + 'px';
-      controlStyle.top    = (el.offsetTop + y) + 'px';
-    } else if ((b.t&&b.l)||(b.b&&b.r)) {
-      elementStyle.height = (elementRect.height - y) + 'px';
-      controlStyle.top    = (el.offsetTop + y) + 'px';
-    } else if ((b.t&&b.r)||(b.b&&b.l)) {
-      elementStyle.height = (elementRect.height - y) + 'px';
-      controlStyle.top    = (el.offsetTop + y) + 'px';
+      if (controlStyle.top != "auto") {
+        controlStyle.bottom = (editorRect.height - (controlRect.bottom - editorRect.top)) + 'px';
+        controlStyle.top    = 'auto';
+      }
+    } else if ((d.bottom && controlRect.bottom <= editorRect.bottom)) {
+      if ((controlRect.bottom + y) > editorRect.bottom) {
+        y = ((controlRect.bottom - editorRect.bottom));
+      }
+      elementStyle.height = (elementRect.height + y) + 'px';
+      if (controlStyle.bottom != "auto") {
+        controlStyle.bottom = 'auto';
+        controlStyle.top    = (controlRect.top - editorRect.top) + 'px';
+      }
     }
+
+    if (d.left) {
+      if ((controlRect.left + x) < editorRect.left) {
+        x = 0 - ((controlRect.left - editorRect.left));
+      }
+      elementStyle.width = (elementRect.width - x) + 'px';
+      if (controlStyle.left != "auto") {
+        controlStyle.right = (editorRect.width - (controlRect.right - editorRect.left)) + 'px';
+        controlStyle.left    = 'auto';
+      }
+    } else if (d.right) {
+      if ((controlRect.right + x) > editorRect.right) {
+        x = ((controlRect.right - editorRect.right));
+      }
+      elementStyle.width = (elementRect.width + x) + 'px';
+      if (controlStyle.right != "auto") {
+        controlStyle.right = 'auto';
+        controlStyle.left    = (controlRect.left - editorRect.left) + 'px';
+      }
+    }
+
   }
 
   /**
@@ -106,17 +145,15 @@ efe.interface.WEditor = (function() {
   function bbMouseOutEvent(e)
   {
     var x;
-    x = e.fromElement;
+    x = e.fromElement || e.originalTarget;
     if (!bBoxes[x.id]) {return}
     element.getElement().style.cursor = 'default';
   }
 
   function bbMouseDownEvent(e)
   {
-    if (bBoxes[e.target.id]) {
-      clickedBB   = bBoxes[e.target.id];
-      sizeClicked = true;
-    }
+    clickedBB   = currentlyOver;
+    sizeClicked = true;
   }
 
   function bbMouseUpEvent()
@@ -145,7 +182,7 @@ efe.interface.WEditor = (function() {
   {
     var boundingBox,
         config,
-        element,
+        edement,
         elStyle;
 
     // Convert to EFElement if not already.
@@ -158,17 +195,17 @@ efe.interface.WEditor = (function() {
     }
 
     boundingBox = new EFBoundingBox(ElementFactory.DIV());
-    element = boundingBox.getElement();
-    element.classList.add('EFBoundingBox');
+    edement = boundingBox.getElement();
+    edement.classList.add('EFBoundingBox');
 
     bbCount++;
-    element.id = 'bBox_' + bbCount;
+    edement.id = 'bBox_' + bbCount;
 
-    bBoxes[element.id] = boundingBox;
+    bBoxes[edement.id] = boundingBox;
 
     // noinspection JSCheckFunctionSignatures
     config  = Configuration.getValue('decoration.selectedElement');
-    elStyle = element.style;
+    elStyle = edement.style;
 
     elStyle.padding     = (config.padding      || 3) + 'px';
     elStyle.borderWidth = (config.border.width || 1) + 'px';
