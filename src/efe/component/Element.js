@@ -2,12 +2,9 @@
  * HTML Element Wrapper
  *
  * @author: Elizabeth Harper <elliefops@gmail.com>
- * @namespace: efe.component
+ * @namespace: EF.c.Element
  */
-if (!efe) {var efe = {}}
-if (!efe.component) {efe.component = {}}
-
-efe.component.Element =
+EF.c.Element =
   (
     function() {
 
@@ -20,14 +17,14 @@ efe.component.Element =
        */
       function Element(e) {
 
-        efe.component.EditorComponent.call(this);
+        EF.c.EditorComponent.call(this);
 
         /**
          * Element Position
          *
-         * @type {efe.layout.Position}
+         * @type {EF.lay.Position}
          */
-        this.position = new efe.layout.Position();
+        this.position = new EF.lay.Position();
 
         /**
          * Backing Element
@@ -39,9 +36,9 @@ efe.component.Element =
         /**
          * Parent Element
          *
-         * @type {efe.component.Element}
+         * @type {EF.c.Element}
          */
-        this.parent = null;
+        this.par = null;
 
         /**
          * Child Elements
@@ -50,31 +47,60 @@ efe.component.Element =
          */
         this.children = [];
 
+        /**
+         * Editor Parent Element
+         *
+         * @type {EF.c.Element}
+         */
+        this.editor = null;
+
         init(this, e);
       }
 
-      Element.prototype = Object.create(efe.component.EditorComponent.prototype);
+      Element.prototype = Object.create(EF.c.EditorComponent.prototype);
 
       /**
-       * Initialize Element
+       * Initialize EF Element
        *
-       * @param a {efe.component.Element}
+       * @param a {EF.c.Element}
        * @param b {HTMLElement|string}
        */
       function init(a, b) {
-        if (b instanceof HTMLElement) {a.element = b}
-        if (typeof b == "string") {a.element = document.create(b)}
+        if (b instanceof HTMLElement) {
+          a.setElement(b);
+          convertTree(a);
+        }
+        if (typeof b == "string") {a.setElement(document.createElement(b));}
+        a.getElement().EFElement = a;
       }
 
       /**
-       * Verify that an element is an instance of efe.component.Element
+       * Convert HTML tree to EF Element Tree
+       *
+       * NOTE: This will be called recursively each time a new EF Element calls init();
+       *
+       * @param e {EF.c.Element} Element who's child elements need to be converted.
+       *
+       * @returns {HTMLElement}
+       */
+      function convertTree(e) {
+        var a, v, c;
+        v = e.getElement();
+        for (a = 0; a < v.children.length; a++) {
+          c = new EF.c.Element(v.children[a]);
+          a.append(c);
+        }
+      }
+
+      /**
+       * Verify that an element is an instance of EF.c.Element
        *
        * @param e {*}
        *
        * @returns {boolean}
        */
       Element.prototype.checkE = function(e) {
-        if (!e instanceof efe.component.Element) {
+        if (!e instanceof EF.c.Element) {
           console.warn('Cannot append element to non-element object.');
           return false;
         }
@@ -84,9 +110,9 @@ efe.component.Element =
       /**
        * Append this element to a provided element
        *
-       * @param e {efe.component.Element} Element to append this element to.
+       * @param e {EF.c.Element} Element to append this element to.
        *
-       * @returns {efe.component.Element}
+       * @returns {EF.c.Element}
        */
       Element.prototype.appendTo = function(e) {
         if (this.checkE(e)) {e.append(this);}
@@ -98,7 +124,7 @@ efe.component.Element =
        *
        * @param e
        *
-       * @returns {efe.component.Element}
+       * @returns {EF.c.Element}
        */
       Element.prototype.append = function(e) {
         if (this.checkE(e)) {
@@ -125,9 +151,11 @@ efe.component.Element =
       /**
        * Set this elements Parent element
        *
-       * @param e {efe.component.Element}
+       * @param e {EF.c.Element}
        */
-      Element.prototype.setParent = function(e) {this.parent = e};
+      Element.prototype.setParent = function(e) {
+        this.par = e;
+      };
 
 
       /**
@@ -195,12 +223,12 @@ efe.component.Element =
        * @param c {Array|string}
        */
       Element.prototype.removeClass = function(c) {
-        var a,b;
+        var a, b;
         if (typeof c == "string") {
           this.element.classList.remove(c);
         } else if (c instanceof Array) {
           a = c.length;
-          for (b=0;b<a;b++){this.removeClass(c[b])}
+          for (b = 0; b < a; b++) {this.removeClass(c[b])}
         }
       };
 
@@ -216,20 +244,168 @@ efe.component.Element =
        *
        * @param i {string}
        *
-       * @returns {efe.component.Element}
+       * @returns {EF.c.Element}
        */
-      Element.prototype.setId = function(i) {this.element.id=i;return this};
+      Element.prototype.setId = function(i) {
+        this.element.id = i;
+        return this
+      };
 
       /**
        * Clone this element.
        *
-       * @returns {efe.component.Element}
+       * @returns {EF.c.Element}
        */
-      Element.prototype.clone = function() {return new efe.component.Element(this.element.cloneNode())};
+      Element.prototype.clone = function(t) {return new EF.c.Element(this.element.cloneNode(t))};
 
+      /**
+       * Get Element Text
+       *
+       * @returns {string|*|innerText}
+       */
       Element.prototype.getText = function() {return this.element.innerText};
 
-      Element.prototype.setText = function(t) {this.element.innerText=t; return this};
+      /**
+       * Set Element Text
+       *
+       * @param t {string} Text to set
+       *
+       * @returns {EF.c.Element}
+       */
+      Element.prototype.setText = function(t) {
+        this.element.innerText = t;
+        return this
+      };
+
+      /**
+       * Set Element Attribute
+       *
+       * @param k {string} Attribute Name
+       * @param v {string} Attribute Value
+       *
+       * @returns {EF.c.Element}
+       */
+      Element.prototype.setAttr = function(k, v) {
+        this.element.setAttribute(k, v);
+        return this
+      };
+
+      /**
+       * Get Element Attribute Value
+       *
+       * @param k {string} Key to get value for.
+       *
+       * @returns {*|string|string|*}
+       */
+      Element.prototype.getAttr = function(k) {return this.element.getAttribute(k)};
+
+      /**
+       * Get Backing Element
+       *
+       * @returns {HTMLElement}
+       */
+      Element.prototype.getElement = function() {return this.element};
+
+      /**
+       * Set Backing Element.
+       *
+       * NOTE: Once this has been set once it cannot be set again, attempts to do so will be ignored.
+       *
+       * @param e {HTMLElement}
+       *
+       * @returns {EF.c.Element}
+       */
+      Element.prototype.setElement = function(e) {
+        if (!this.element) {
+          this.element = e;
+        }
+        return this;
+      };
+
+      /**
+       * Get position of this element relative to the client
+       *
+       * @returns {{top: Number, bottom: Number, right: Number, left: Number}}
+       */
+      Element.prototype.getClientPosition = function() {
+        var a = this.element.getBoundingClientRect();
+        return {top: a.top, bottom: a.bottom, right: a.right, left: a.left};
+      };
+
+      /**
+       * Get y position of the top of this element relative to the top of the client
+       *
+       * @returns {Number}
+       */
+      Element.prototype.clientTop = function() {return this.element.getBoundingClientRect().top;};
+
+      /**
+       * Get x position of the left of this element relative to the left side of the client
+       *
+       * @returns {Number}
+       */
+      Element.prototype.clientLeft = function() {return this.element.getBoundingClientRect().left;};
+
+      /**
+       * Get x position of the right side of this element relative to the right side of the client.
+       *
+       * @returns {Number}
+       */
+      Element.prototype.clientRight = function() {return this.element.getBoundingClientRect().right;};
+
+      /**
+       * Get y position of the bottom of this element relative to the bottom of the client
+       *
+       * @returns {Number}
+       */
+      Element.prototype.clientBottom = function() {return this.element.getBoundingClientRect().bottom;};
+
+      /**
+       * Get y position of the top of this element relative to it's parent element.
+       *
+       * @returns {Number}
+       */
+      Element.prototype.offsetTop = function() {
+        if (!this.par) {return this.clientTop();}
+        return this.clientTop() - this.par.clientTop();
+      };
+
+      /**
+       * Get x position of the left side of this element relative to the left side of it's parent.
+       *
+       * @returns {Number}
+       */
+      Element.prototype.offsetLeft = function() {
+        if (!this.par) {return this.clientLeft();}
+        return this.this.clientLeft() - this.par.clientLeft();
+      };
+
+      /**
+       * Get x position of the right side of this element relative to the right side of it's parent.
+       *
+       * @returns {Number}
+       */
+      Element.prototype.offsetRight = function() {
+        if (!this.par) {return this.clientRight();}
+        return this.this.clientRight() - this.par.clientRight();
+      };
+
+      /**
+       * Get y position of the bottom of this element relative to the bottom of it's parent;
+       *
+       * @returns {Number}
+       */
+      Element.prototype.offsetBottom = function() {
+        if (!this.par) {return this.clientBottom();}
+        return this.this.clientBottom() - this.par.clientBottom();
+      };
+
+      /**
+       * Get This Element's parent element.
+       *
+       * @returns {EF.c.Element|*}
+       */
+      Element.prototype.getParent = function() {return this.par;};
 
       return Element;
     }

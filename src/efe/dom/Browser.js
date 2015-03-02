@@ -1,4 +1,4 @@
-var BrowserType = {
+EF.d.Browser = {
   IE:      0,
   SAFARI:  1,
   OPERA:   2,

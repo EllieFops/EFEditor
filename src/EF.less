@@ -1,0 +1,46 @@
+// Colors
+@darkDark: #333;
+@darkMain: #444;
+@darkLight: #555;
+
+// Borders
+@borderOuter: 1px solid @darkDark;
+@borderMain: 1px solid @darkMain;
+@borderLight: 1px solid @darkLight;
+
+#tableSelectionPane {
+  padding: 8px;
+  border: @borderOuter;
+  border-radius: 5px;
+  position: absolute;
+
+  > span {
+    display: block;
+    text-align: center;
+  }
+
+  .selCell {
+    width: 1em;
+    height: 1em;
+    border: @borderOuter;
+  }
+}
+
+.moveControl {
+  width: 5px;
+  height: 5px;
+  border: @borderLight;
+  cursor: move;
+}
+
+.rotControl {
+  width: 10px;
+  height: 10px;
+  border: @borderLight;
+  border-radius: 5px;
+}
+
+// Generics
+.posAbs {
+  position: absolute;
+}

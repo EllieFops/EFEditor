@@ -1,8 +1,10 @@
-// Namespace: efe.application
-if (!efe) {var efe={}}
-if (!efe.application) {efe.application={}}
-
-efe.application.App = (
+/**
+ * Application
+ *
+ * @author: Elizabeth Harper <elliefops@gmail.com>
+ * @namespace: efe.a
+ */
+EF.a.App = (
   function()
   {
     var appRunning = false;
@@ -50,7 +52,7 @@ efe.application.App = (
       function upd()
       {
         var i;
-        speed = 1 / efe.application.Configuration.getValue(fps, 30);
+        speed = 1 / EF.a.Configuration.getValue(fps, 30);
         last = current;
         current = new Date().getTime();
 

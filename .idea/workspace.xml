@@ -2,46 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6429e76a-d639-495e-a206-4b33b13deb8f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/application/App.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/component/AppElement.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/views/ConfigurationView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/Models/EFKeyboard.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/component/EditControls.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/component/EditorComponent.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/component/Element.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GruntFile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/Models/Keys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/views/TableSize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/utility/Time.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/views/Window.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/Models/EFKeyboard.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/Models/Keys.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/Controllers/Controller.js" afterPath="$PROJECT_DIR$/src/efe/Controllers/Controller.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/Controllers/WPane.js" afterPath="$PROJECT_DIR$/src/efe/Controllers/WPane.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/Models/Application.js" afterPath="$PROJECT_DIR$/src/efe/Models/Application.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/Models/BlockType.js" afterPath="$PROJECT_DIR$/src/efe/Models/BlockType.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/Models/BrowserType.js" afterPath="$PROJECT_DIR$/src/efe/Models/BrowserType.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/Models/Configuration.js" afterPath="$PROJECT_DIR$/src/efe/Models/Configuration.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/Models/DOMEvents.js" afterPath="$PROJECT_DIR$/src/efe/Models/DOMEvents.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/Models/EFBoundingBox.js" afterPath="$PROJECT_DIR$/src/efe/Models/EFBoundingBox.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/Models/EFEditable.js" afterPath="$PROJECT_DIR$/src/efe/Models/EFEditable.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/Models/EFElement.js" afterPath="$PROJECT_DIR$/src/efe/Models/EFElement.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/Models/EFEvents.js" afterPath="$PROJECT_DIR$/src/efe/Models/EFEvents.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/Models/EFMouse.js" afterPath="$PROJECT_DIR$/src/efe/Models/EFMouse.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/Models/Position.js" afterPath="$PROJECT_DIR$/src/efe/layout/Position.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/Models/Selection.js" afterPath="$PROJECT_DIR$/src/efe/Models/Selection.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/Models/WEditor.js" afterPath="$PROJECT_DIR$/src/efe/Models/WEditor.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/Services/DOMHelper.js" afterPath="$PROJECT_DIR$/src/efe/Services/DOMHelper.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/Services/ElementFactory.js" afterPath="$PROJECT_DIR$/src/efe/Services/ElementFactory.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/Services/Events.js" afterPath="$PROJECT_DIR$/src/efe/Services/Events.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/Services/JSONHelper.js" afterPath="$PROJECT_DIR$/src/efe/Services/JSONHelper.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/Templater.js" afterPath="$PROJECT_DIR$/src/efe/Templater.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testing/test.css" afterPath="$PROJECT_DIR$/testing/test.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/utility/Browser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/component/ButtonSet.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/application/Configuration.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/component/EditControl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/dom/Element.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/utility/JSON.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/modules/Module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/component/MoveControl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/modules/plainTable/PlainTable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/component/RotateControl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Structure.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/views/Toolbar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/efe/component/ToolbarButton.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/EFEditor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/efe/Controllers/Controller.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/efe/Controllers/WPane.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/efe/Models/Application.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/efe/Models/BlockType.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/efe/Models/Configuration.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/efe/Models/EFEvents.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/efe/Services/DOMHelper.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/efe/Services/ElementFactory.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/efe/Services/Events.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/efe/Services/JSONHelper.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/efe/Templater.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/efe/utility/Time.js" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/efe/Models/BrowserType.js" afterPath="$PROJECT_DIR$/src/efe/dom/Browser.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/efe/Models/DOMEvents.js" afterPath="$PROJECT_DIR$/src/efe/dom/Event.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/efe/Models/EFKeyboard.js" afterPath="$PROJECT_DIR$/src/efe/input/Keyboard.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/efe/Models/EFMouse.js" afterPath="$PROJECT_DIR$/src/efe/input/Mouse.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/efe/Models/Keys.js" afterPath="$PROJECT_DIR$/src/EF.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/efe/component/EditControls.js" afterPath="$PROJECT_DIR$/src/efe/component/EditControlSet.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/efe/views/Window.js" afterPath="$PROJECT_DIR$/src/efe/views/Pane.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/efe/application/App.js" afterPath="$PROJECT_DIR$/src/efe/application/App.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/efe/component/AppElement.js" afterPath="$PROJECT_DIR$/src/efe/component/AppElement.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/efe/views/ConfigurationView.js" afterPath="$PROJECT_DIR$/src/efe/views/ConfigurationView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/efe/Models/EFBoundingBox.js" afterPath="$PROJECT_DIR$/src/efe/Models/EFBoundingBox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/efe/component/EditorComponent.js" afterPath="$PROJECT_DIR$/src/efe/component/EditorComponent.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/efe/component/Element.js" afterPath="$PROJECT_DIR$/src/efe/component/Element.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GruntFile.js" afterPath="$PROJECT_DIR$/GruntFile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/efe/layout/Position.js" afterPath="$PROJECT_DIR$/src/efe/layout/Position.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/efe/views/TableSize.js" afterPath="$PROJECT_DIR$/src/efe/views/TableSize.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/efe/Models/WEditor.js" afterPath="$PROJECT_DIR$/src/efe/Models/WEditor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testing/test.html" afterPath="$PROJECT_DIR$/testing/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testing/test.js" afterPath="$PROJECT_DIR$/testing/test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testing/work.js" afterPath="$PROJECT_DIR$/testing/work.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -69,62 +75,110 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="TableSize.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/efe/views/TableSize.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41202185" vertical-offset="351" max-vertical-offset="2015">
-              <caret line="56" column="0" selection-start-line="44" selection-start-column="30" selection-end-line="56" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Element.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/efe/component/Element.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2153" max-vertical-offset="3146">
-              <caret line="231" column="86" selection-start-line="231" selection-start-column="86" selection-end-line="231" selection-end-column="86" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Position.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/efe/layout/Position.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="559">
-              <caret line="33" column="63" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testing/test.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2322" max-vertical-offset="5044">
-              <caret line="222" column="0" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Window.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/efe/views/Window.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="377">
-              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="TableSize.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/efe/views/TableSize.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="731" max-vertical-offset="2312">
+                  <caret line="80" column="62" selection-start-line="80" selection-start-column="62" selection-end-line="80" selection-end-column="62" />
+                  <folding>
+                    <element signature="e#651#846#0" expanded="false" />
+                    <element signature="e#876#1220#0" expanded="false" />
+                    <element signature="e#1260#1358#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Element.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/efe/component/Element.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="9.42141" vertical-offset="0" max-vertical-offset="7106">
+                  <caret line="409" column="9" selection-start-line="409" selection-start-column="9" selection-end-line="409" selection-end-column="9" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Toolbar.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/efe/views/Toolbar.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+                  <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MoveControl.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/efe/component/MoveControl.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+                  <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="EditControl.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/efe/component/EditControl.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935">
+                  <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="EditorComponent.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/efe/component/EditorComponent.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="89" max-vertical-offset="1088">
+                  <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="RotateControl.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/efe/component/RotateControl.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+                  <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Structure.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Structure.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+                  <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="EF.less" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/EF.less">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.8429752" vertical-offset="0" max-vertical-offset="884">
+                  <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -132,68 +186,71 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/Models/BlockType.js" />
-        <option value="$PROJECT_DIR$/src/app/Models/Selection.js" />
-        <option value="$PROJECT_DIR$/src/app/Templater.js" />
-        <option value="$PROJECT_DIR$/src/app/Models/BrowserType.js" />
-        <option value="$PROJECT_DIR$/src/app/Controllers/Controller.js" />
-        <option value="$PROJECT_DIR$/src/app/Services/EventEmitter.js" />
-        <option value="$PROJECT_DIR$/src/app/Models/EFEvents.js" />
-        <option value="$PROJECT_DIR$/src/app/Controllers/WPane.js" />
-        <option value="$PROJECT_DIR$/src/app/Models/Application.js" />
-        <option value="$PROJECT_DIR$/src/app/Services/Events.js" />
-        <option value="$PROJECT_DIR$/Assets/Styles/style.css" />
-        <option value="$PROJECT_DIR$/src/EFEditor.js" />
-        <option value="$PROJECT_DIR$/src/app/Services/JSONHelper.js" />
-        <option value="$PROJECT_DIR$/src/app/Services/DOMHelper.js" />
-        <option value="$PROJECT_DIR$/Assets/Styles/Main.less" />
-        <option value="$PROJECT_DIR$/src/app/Models/Configuration.js" />
-        <option value="$PROJECT_DIR$/src/app/Models/EFEditable.js" />
-        <option value="$PROJECT_DIR$/src/app/Models/DomEvents.js" />
-        <option value="$PROJECT_DIR$/src/app/Models/BoundingBox.js" />
-        <option value="$PROJECT_DIR$/src/app/Models/EFElement.js" />
-        <option value="$PROJECT_DIR$/src/app/Models/Position.js" />
-        <option value="$PROJECT_DIR$/src/app/Services/ElementFactory.js" />
-        <option value="$PROJECT_DIR$/testing/test.html" />
-        <option value="$PROJECT_DIR$/src/app/Models/Keys.js" />
-        <option value="$PROJECT_DIR$/src/app/Models/EFKeyboard.js" />
-        <option value="$PROJECT_DIR$/testing/work.js" />
-        <option value="$PROJECT_DIR$/src/app/Models/EFMouse.js" />
-        <option value="$PROJECT_DIR$/src/app/Models/EFBoundingBox.js" />
-        <option value="$PROJECT_DIR$/testing/test.css" />
-        <option value="$PROJECT_DIR$/src/app/Models/WEditor.js" />
-        <option value="$PROJECT_DIR$/src/efe/utility/Time.js" />
-        <option value="$PROJECT_DIR$/src/efe/application/core.js" />
-        <option value="$PROJECT_DIR$/src/efe/Models/EFBoundingBox.js" />
-        <option value="$PROJECT_DIR$/src/efe/views/ConfigurationView.js" />
-        <option value="$PROJECT_DIR$/src/efe/components/AppElement.js" />
-        <option value="$PROJECT_DIR$/src/efe/Models/EFKeyboard.js" />
-        <option value="$PROJECT_DIR$/GruntFile.js" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/efe/views/View.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/efe/components/Element.js" />
-        <option value="$PROJECT_DIR$/src/efe/component/AppElement.js" />
-        <option value="$PROJECT_DIR$/src/efe/component/BoundingBox.js" />
-        <option value="$PROJECT_DIR$/src/efe/component/EditControls.js" />
-        <option value="$PROJECT_DIR$/src/efe/component/Component.js" />
-        <option value="$PROJECT_DIR$/src/efe/component/EditorComponent.js" />
-        <option value="$PROJECT_DIR$/testing/test.js" />
-        <option value="$PROJECT_DIR$/src/efe/layout/Position.js" />
         <option value="$PROJECT_DIR$/src/efe/views/Window.js" />
-        <option value="$PROJECT_DIR$/src/efe/component/Element.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/efe/Structure.js" />
+        <option value="$PROJECT_DIR$/src/efe/component/AppElement.js" />
+        <option value="$PROJECT_DIR$/src/efe/component/ButtonSet.js" />
+        <option value="$PROJECT_DIR$/src/efe/component/EditControls.js" />
+        <option value="$PROJECT_DIR$/src/efe/component/EditControlSet.js" />
+        <option value="$PROJECT_DIR$/src/efe/Models/DOMEvents.js" />
+        <option value="$PROJECT_DIR$/src/efe/dom/Events.js" />
+        <option value="$PROJECT_DIR$/src/efe/Models/BrowserType.js" />
+        <option value="$PROJECT_DIR$/src/efe/Services/JSONHelper.js" />
+        <option value="$PROJECT_DIR$/src/efe/utility/JSON.js" />
+        <option value="$PROJECT_DIR$/src/efe/utility/Time.js" />
+        <option value="$PROJECT_DIR$/src/efe/input/EFMouse.js" />
+        <option value="$PROJECT_DIR$/src/efe/dom/Keyboard.js" />
+        <option value="$PROJECT_DIR$/src/efe/input/EFKeyboard.js" />
+        <option value="$PROJECT_DIR$/src/efe/input/Mouse.js" />
+        <option value="$PROJECT_DIR$/src/efe/layout/Position.js" />
+        <option value="$PROJECT_DIR$/src/efe/Models/Configuration.js" />
+        <option value="$PROJECT_DIR$/src/EFEditor.js" />
+        <option value="$PROJECT_DIR$/src/efe/Templater.js" />
+        <option value="$PROJECT_DIR$/src/efe/Controllers/Controller.js" />
+        <option value="$PROJECT_DIR$/src/efe/Controllers/WPane.js" />
+        <option value="$PROJECT_DIR$/src/efe/Models/BlockType.js" />
+        <option value="$PROJECT_DIR$/src/efe/application/App.js" />
+        <option value="$PROJECT_DIR$/src/efe/utility/Browser.js" />
+        <option value="$PROJECT_DIR$/src/efe/views/ConfigurationView.js" />
+        <option value="$PROJECT_DIR$/src/efe/views/Pane.js" />
+        <option value="$PROJECT_DIR$/src/efe/component/ToolBarButton.js" />
+        <option value="$PROJECT_DIR$/src/efe/application/Configuration.js" />
+        <option value="$PROJECT_DIR$/src/efe/component/ToolbarButton.js" />
+        <option value="$PROJECT_DIR$/src/efe/modules/insert/PlainTable.js" />
+        <option value="$PROJECT_DIR$/src/efe/Services/ElementFactory.js" />
+        <option value="$PROJECT_DIR$/src/efe/modules/insert/plainTable/views/TableSize.js" />
+        <option value="$PROJECT_DIR$/src/efe/modules/insertTable/plainTable/views/TableSize.js" />
+        <option value="$PROJECT_DIR$/src/efe/modules/Module.js" />
+        <option value="$PROJECT_DIR$/src/efe/modules/plainTable/PlainTable.js" />
+        <option value="$PROJECT_DIR$/src/efe/dom/Browser.js" />
+        <option value="$PROJECT_DIR$/src/Structure.js" />
+        <option value="$PROJECT_DIR$/src/efe/component/ContainerComponent.js" />
+        <option value="$PROJECT_DIR$/src/efe/dom/Element.js" />
+        <option value="$PROJECT_DIR$/src/efe/dom/Event.js" />
         <option value="$PROJECT_DIR$/src/efe/views/TableSize.js" />
+        <option value="$PROJECT_DIR$/GruntFile.js" />
+        <option value="$PROJECT_DIR$/src/efe/component/RotateControl.js" />
+        <option value="$PROJECT_DIR$/src/EF.less" />
+        <option value="$PROJECT_DIR$/src/efe/views/Toolbar.js" />
+        <option value="$PROJECT_DIR$/src/efe/component/MoveControl.js" />
+        <option value="$PROJECT_DIR$/src/efe/component/EditorComponent.js" />
+        <option value="$PROJECT_DIR$/src/efe/component/EditControl.js" />
+        <option value="$PROJECT_DIR$/src/efe/component/Element.js" />
       </list>
     </option>
   </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
   </component>
+  <component name="NamedScopeManager">
+    <scope name="Src" pattern="file[Templater]:src/*" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="25" />
-    <option name="width" value="1920" />
-    <option name="height" value="1055" />
+    <option name="x" value="-1" />
+    <option name="width" value="1442" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -218,7 +275,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -233,7 +289,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="EFEditor" />
+              <option name="myItemId" value="Templater" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -243,11 +299,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="EFEditor" />
+              <option name="myItemId" value="Templater" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="testing" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -257,7 +313,113 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="EFEditor" />
+              <option name="myItemId" value="Templater" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="efe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Templater" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Templater" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="efe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utility" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Templater" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Templater" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="efe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Templater" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Templater" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="efe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Templater" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Templater" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="efe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="component" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Templater" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Templater" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -267,11 +429,12 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="options.lastSelected" value="preferences.sourceCode.JSON" />
+    <property name="options.lastSelected" value="watcher.settings" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Framework" />
@@ -283,14 +446,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/efe/component" />
       <recent name="$PROJECT_DIR$/testing" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/efe/layout" />
-      <recent name="$PROJECT_DIR$/src/efe" />
-      <recent name="$PROJECT_DIR$/src/app" />
-      <recent name="$PROJECT_DIR$/src/app/Document" />
-      <recent name="$PROJECT_DIR$/src/libs" />
+      <recent name="$PROJECT_DIR$/src/efe/dom" />
+      <recent name="$PROJECT_DIR$/src/efe/views" />
+      <recent name="$PROJECT_DIR$/src/efe/modules" />
+      <recent name="$PROJECT_DIR$/src/efe/modules/insert/plainTable/views" />
+      <recent name="$PROJECT_DIR$/src/efe/modules/insert/plainTable" />
     </key>
   </component>
   <component name="RunManager">
@@ -315,7 +479,6 @@
       <node-options />
       <gulpfile />
       <tasks />
-      <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
       <method />
@@ -340,29 +503,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
-    <editor active="false" />
+    <frame x="-1" y="0" width="1442" height="900" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19009584" sideWeight="0.41145834" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40339702" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13927428" sideWeight="0.5885417" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32908705" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30625" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14727855" sideWeight="0.51979166" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.403125" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14727855" sideWeight="0.48020834" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -375,12 +538,12 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5864583" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18697916" sideWeight="0.41145834" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19210246" sideWeight="0.41145834" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40416667" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40339702" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13927428" sideWeight="0.5885417" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -411,86 +574,12 @@
           <line>3320</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/EFEditor.js</url>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="23" />
+      <option name="time" value="25" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/efe/Controllers/WPane.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="612">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Models/EFEvents.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="255">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Models/Application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="748">
-          <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Templater.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1853">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Models/Configuration.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="442">
-          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Templater.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1559" max-vertical-offset="2431">
-          <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Models/Selection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="922" max-vertical-offset="1853">
-          <caret line="75" column="25" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Models/BrowserType.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Models/EFEvents.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Services/Events.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testing/jquery-2.1.3.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
@@ -505,82 +594,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Models/Application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63909775" vertical-offset="0" max-vertical-offset="931">
-          <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Models/BlockType.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0185186" vertical-offset="0" max-vertical-offset="1054">
-          <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Controllers/WPane.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Controllers/Controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18259935" vertical-offset="0" max-vertical-offset="931">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Templater.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25925925" vertical-offset="0" max-vertical-offset="1853">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EFEditor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5740741" vertical-offset="0" max-vertical-offset="3281">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding>
-            <element signature="e#90#412#0" expanded="false" />
-            <element signature="e#2485#2803#0" expanded="false" />
-            <element signature="e#2865#3209#0" expanded="false" />
-            <element signature="e#3254#3591#0" expanded="false" />
-            <element signature="e#4892#6382#0" expanded="false" />
-            <element signature="e#6415#9293#0" expanded="false" />
-            <element signature="e#9363#10112#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Services/JSONHelper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4074074" vertical-offset="0" max-vertical-offset="918">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Services/DOMHelper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/efe/Models/EFEditable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2448">
           <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Models/EFElement.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-85.0" vertical-offset="0" max-vertical-offset="5746">
-          <caret line="295" column="25" selection-start-line="295" selection-start-column="25" selection-end-line="295" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -595,27 +612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="4575">
           <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Models/Configuration.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="293" max-vertical-offset="1224">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Services/ElementFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1836" max-vertical-offset="5831">
-          <caret line="121" column="61" selection-start-line="121" selection-start-column="61" selection-end-line="121" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Models/Keys.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -640,13 +636,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Models/EFMouse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1989">
-          <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testing/test.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="130">
@@ -654,118 +643,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Models/WEditor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3185">
-          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/utility/Time.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="273">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/application/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="156" max-vertical-offset="1092">
-          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/efe/Controllers/Controller.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="936">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GruntFile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="637">
-          <caret line="24" column="130" selection-start-line="24" selection-start-column="130" selection-end-line="24" selection-end-column="130" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30639732" vertical-offset="0" max-vertical-offset="891">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0284153" vertical-offset="0" max-vertical-offset="117">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/component/AppElement.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="338">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Models/EFKeyboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7462" max-vertical-offset="8398">
-          <caret line="622" column="0" selection-start-line="622" selection-start-column="0" selection-end-line="622" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/views/ConfigurationView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="312">
-          <caret line="7" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/component/EditControls.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="338">
-          <caret line="8" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/component/EditorComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="338">
-          <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/Models/EFBoundingBox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1443">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/layout/Position.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="559">
-          <caret line="33" column="63" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -777,41 +658,304 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/EFEditor-0.0.1-1.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13175675" vertical-offset="0" max-vertical-offset="592">
-          <caret line="6" column="400" selection-start-line="6" selection-start-column="400" selection-end-line="6" selection-end-column="400" />
+        <state vertical-scroll-proportion="-12.92" vertical-offset="0" max-vertical-offset="493">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/views/Window.js">
+    <entry file="file://$PROJECT_DIR$/src/efe/component/AppElement.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="377">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="425">
+          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/component/ButtonSet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="40" max-vertical-offset="527">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/utility/JSON.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
+          <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/layout/Position.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+          <caret line="6" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/input/Keyboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11016">
+          <caret line="6" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/input/Mouse.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2533">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/utility/Browser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.03651987" vertical-offset="0" max-vertical-offset="931">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#106#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/views/ConfigurationView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10675039" vertical-offset="0" max-vertical-offset="637">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/views/Pane.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10675039" vertical-offset="0" max-vertical-offset="637">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/Models/EFElement.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1326" max-vertical-offset="5746">
+          <caret line="295" column="25" selection-start-line="295" selection-start-column="25" selection-end-line="295" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/Models/WEditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="4165">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/application/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1462">
+          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/Models/Selection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="672" max-vertical-offset="1853">
+          <caret line="75" column="25" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/application/Configuration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2176">
+          <caret line="55" column="7" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/EFEditor-0.0.1-14.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2724359" vertical-offset="0" max-vertical-offset="697">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/Models/EFBoundingBox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.85400313" vertical-offset="782" max-vertical-offset="1887">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/component/ToolbarButton.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.66718996" vertical-offset="0" max-vertical-offset="637">
+          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/modules/Module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
+          <caret line="6" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/modules/plainTable/PlainTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/dom/Browser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="931">
+          <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/dom/Element.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.018259935" vertical-offset="0" max-vertical-offset="9112">
+          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/dom/Event.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25344038" vertical-offset="0" max-vertical-offset="3400">
+          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/component/EditControlSet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Structure.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/views/TableSize.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="731" max-vertical-offset="2312">
+          <caret line="80" column="62" selection-start-line="80" selection-start-column="62" selection-end-line="80" selection-end-column="62" />
+          <folding>
+            <element signature="e#651#846#0" expanded="false" />
+            <element signature="e#876#1220#0" expanded="false" />
+            <element signature="e#1260#1358#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GruntFile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1360">
+          <caret line="71" column="93" selection-start-line="71" selection-start-column="93" selection-end-line="71" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/component/RotateControl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EF.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8429752" vertical-offset="0" max-vertical-offset="884">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/views/Toolbar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/component/MoveControl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/component/EditControl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935">
+          <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/efe/component/EditorComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="89" max-vertical-offset="1088">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/efe/component/Element.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2153" max-vertical-offset="3146">
-          <caret line="231" column="86" selection-start-line="231" selection-start-column="86" selection-end-line="231" selection-end-column="86" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="9.42141" vertical-offset="0" max-vertical-offset="7106">
+          <caret line="409" column="9" selection-start-line="409" selection-start-column="9" selection-end-line="409" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/efe/views/TableSize.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41202185" vertical-offset="351" max-vertical-offset="2015">
-          <caret line="56" column="0" selection-start-line="44" selection-start-column="30" selection-end-line="56" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <last-edited>Src</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+          <order>
+            <scope name="Src" />
+          </order>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

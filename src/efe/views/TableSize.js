@@ -4,46 +4,42 @@
  * @author: Elizabeth Harper <elliefops@gmail.com>
  * @namespace: efe.view
  */
-if (!efe) {var efe = {}}
-if (!efe.view) {efe.view = {}}
-
-efe.view.TableSize =
+EF.v.TableSize =
   (
     function() {
 
       function TableSize() {
-        efe.view.Pane.call(this, new efe.component.Element('div'));
+        EF.v.Pane.call(this, new EF.c.Element('div'));
 
         this.table  = null;
         this.span   = null;
         this.counts = {};
 
+        this.events[EF.d.Event.CLICK] = this.handleClick;
+        this.events[EF.d.Event.MOUSE_MOVE] = this.handleMouseMove;
+        this.events[EF.d.Event.MOUSE_OVER] = this.handleMouseOver;
+
         this.init();
       }
 
-      TableSize.prototype = Object.create(efe.view.Pane.prototype);
+      TableSize.prototype = Object.create(EF.v.Pane.prototype);
 
       TableSize.prototype.init = function() {
         this.table = initTable();
-        this.element
-          .setId('tableSelectionPane')
-          .css({padding: '8px', border: '1px solid #444', 'border-radius': '5px', 'position': 'absolute'})
-          .append(initTable());
-        this.span = new efe.component.Element('span');
-        this.span
-          .setText('1 x 1')
-          .css({display: 'block', 'text-align': 'center'});
+        this.element.setId('tableSelectionPane').append(initTable());
+        this.span = new EF.c.Element('span');
+        this.span.setText('1 x 1');
       };
 
       function initTable() {
+
         var td, tr, table;
 
-        table = new efe.component.Element('table');
-        tr    = new efe.component.Element('tr');
-        td    = new efe.component.Element('td');
+        table = new EF.c.Element('table');
+        tr    = new EF.c.Element('tr');
+        td    = new EF.c.Element('td');
 
-        td.addClass('selCell')
-          .css({'width':'1em','height':'1em',border:'1px solid #444'});
+        td.addClass('selCell');
 
         tr.append(td.clone());
         tr.append(td);
@@ -51,18 +47,7 @@ efe.view.TableSize =
         table.addClass('selTable');
         table.append(tr.clone);
         table.append(tr);
-
-
-
-
       }
-
-
-
-      var span;
-      var callback;
-      var mouse;
-      var counts;
 
       function TableSelection()
       {
@@ -73,6 +58,40 @@ efe.view.TableSize =
         }
       }
 
+      /**
+       * Handle Click
+       *
+       * @param e {MouseEvent}
+       */
+      TableSize.prototype.handleClick = function(e) {
+
+      };
+
+      /**
+       * Handle Mouse Over
+       *
+       * @param e {MouseEvent}
+       */
+      TableSize.prototype.handleMouseOver = function(e) {
+        var a, t;
+        t = e.target;
+        if (e.target.nodeName === EF.d.Element.TR && e.target.EFElement) {
+          a = e.target.parentElement;
+          if (e.target === a.lastChild || e.target === a.lastChild.previousSibling) {
+            this.table.append(a.lastChild.EFElement.clone(true));
+          }
+        }
+      };
+
+      /**
+       * Handle Mouse Over
+       *
+       * @param e {MouseEvent}
+       */
+      TableSize.prototype.handleMouseOver = function(e) {
+
+      };
+
       function init() {mouse = {x: 0, y: 0}; counts  = {cols: 2, rows: 2}; create();}
       function resetAll() {element.remove(); init();}
       function resetElement() {element.remove(); create();}
@@ -80,17 +99,6 @@ efe.view.TableSize =
       function create() {
 
         var $tr, $td;
-
-        element = $('<div id="tableSizeSelector">');
-        span    = $('<span>1x1</span>');
-        table   = $('<table class="selTable">');
-        $tr     = $('<tr>');
-        $td     = $('<td class="selCell">');
-        $tr.append($td.clone()).append($td);
-        table.append($tr.clone()).append($tr);
-        span.css({'display': 'block', 'text-align': 'center'});
-        element.append(table);
-        element.append(span);
 
         element
           .on('mouseover', function(e) {

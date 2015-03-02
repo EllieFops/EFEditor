@@ -4,10 +4,7 @@
  * @author: Elizabeth Harper <elliefops@gmail.com>
  * @namespace: efe.components
  */
-if (!efe) {var efe = {}}
-if (!efe.layout) {efe.layout = {}}
-
-efe.layout.Position = (
+EF.lay.Position = (
   function() {
 
     /**

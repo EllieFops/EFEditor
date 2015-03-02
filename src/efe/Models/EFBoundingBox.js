@@ -4,7 +4,7 @@ var EFBoundingBox = (function() {
 
   function EFBoundingBox(element, editor)
   {
-    if (!element instanceof EFElement || !editor instanceof efe.interface.WEditor) {
+    if (!element instanceof EFElement || !editor instanceof EF.interface.WEditor) {
       throw new Error('Invalid element or editor passed to EFBoundingBox');
     }
 
@@ -18,7 +18,7 @@ var EFBoundingBox = (function() {
   EFBoundingBox.prototype.update = function()
   {
     var a, b, c, d, f, s;
-    c = efe.application.Configuration.getValue('decoration.element');
+    c = EF.a.Configuration.getValue('decoration.element');
     if (!c) {
       throw new Error('Configuration for element style not reachable.');
     }

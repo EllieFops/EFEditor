@@ -1,11 +1,11 @@
 // Namespace: efe.interface
-if(typeof efe == "undefined") {
-  efe = {interface:{}};
-} else if(typeof efe.interface == "undefined") {
-  efe.interface = {};
+if(typeof EF == "undefined") {
+  EF = {interface:{}};
+} else if(typeof EF.interface == "undefined") {
+  EF.interface = {};
 }
 
-efe.interface.WEditor = (function() {
+EF.interface.WEditor = (function() {
 
   var bbCount = 0;
   var bBoxes = {};
@@ -44,7 +44,7 @@ efe.interface.WEditor = (function() {
     var b, c, z, a;
 
     if (sizeClicked) {
-      sizeClicked = efe.input.EFMouse.isLeftButton();
+      sizeClicked = EF.input.Mouse.isLeftButton();
     }
 
     if (!sizeClicked) {
@@ -52,7 +52,7 @@ efe.interface.WEditor = (function() {
         if (!bBoxes.hasOwnProperty(a)) {continue}
         a = bBoxes[a];
         //noinspection JSCheckFunctionSignatures
-        c = a.isInResizeRange(efe.input.EFMouse.getPosition());
+        c = a.isInResizeRange(EF.input.Mouse.getPosition());
         if (c.top || c.bottom || c.left || c.right) {
           b = (b && b.getElement().style.zIndex > a.getElement().style.zIndex) ? b : a;
           d = c;
@@ -78,7 +78,7 @@ efe.interface.WEditor = (function() {
       }
     }
 
-    if (efe.input.EFMouse.isLeftButton()) {bbResizeEvent(e)}
+    if (EF.input.Mouse.isLeftButton()) {bbResizeEvent(e)}
   }
 
   function bbResizeEvent(e)

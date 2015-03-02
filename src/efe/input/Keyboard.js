@@ -1,8 +1,10 @@
-// Namespace: efe.input
-if (!efe) {var efe = {};}
-if (!efe.input) {efe.input = {};}
-
-efe.input.Keyboard =
+/**
+ * Keyboard Information
+ *
+ * @author: Elizabeth Harper <elliefops@gmail.com>
+ * @namespace: efe.i
+ */
+EF.i.Keyboard =
   (
     function() {
 
@@ -125,7 +127,7 @@ efe.input.Keyboard =
          * @returns {number}
          */
         get KEY_DASH() {
-          switch (efe.App.getBrowserType()) {
+          switch (EF.App.getBrowserType()) {
             case BrowserType.FIREFOX:
               return 173;
             case BrowserType.OPERA:
@@ -141,7 +143,7 @@ efe.input.Keyboard =
          * @returns {number}
          */
         get KEY_COMMA() {
-          switch (efe.App.getBrowserType()) {
+          switch (EF.App.getBrowserType()) {
             case BrowserType.OPERA:
               return 44;
             default:
@@ -155,7 +157,7 @@ efe.input.Keyboard =
          * @returns {number}
          */
         get KEY_PERIOD() {
-          switch (efe.App.getBrowserType()) {
+          switch (EF.App.getBrowserType()) {
             case BrowserType.OPERA:
               return 46;
             default:
@@ -170,7 +172,7 @@ efe.input.Keyboard =
          * @returns {number}
          */
         get KEY_OPEN_BRACKET() {
-          switch (efe.App.getBrowserType()) {
+          switch (EF.App.getBrowserType()) {
             case BrowserType.OPERA:
               return 91;
             default:
@@ -623,7 +625,7 @@ efe.input.Keyboard =
       var pressedKeys = {};
 
       function constructor() {
-        bT = efe.App.getBrowserType();
+        bT = EF.App.getBrowserType();
       }
 
       Keys.isKeyPressed = function(key) {

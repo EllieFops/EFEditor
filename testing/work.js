@@ -106,7 +106,7 @@ var wEditor;
   var $tPane   = $('#tPane');
   var $window  = $(window);
   var $tabs    = $('#paneTabs').find('span');
-  wEditor  = new efe.interface.WEditor(
+  wEditor  = new EF.interface.WEditor(
     new EFElement(
       document.getElementById('editorContent')
     )

@@ -1,19 +1,18 @@
 /**
  * Application Element
  *
- * @author: Elizabeth Harper elliefops@gmail.com
+ * @author: Elizabeth Harper <elliefops@gmail.com>
  * @namespace: efe.component
  */
-if (!efe) {var efe = {}}
-if (!efe.component) {efe.component = {}}
-
-efe.component.AppElement =
+EF.c.AppElement =
   (
     function() {
 
-      function AppElement() {
-        this.element = null;
+      function AppElement(e) {
+        EF.c.Element.call(this, e);
       }
+
+      AppElement.prototype = Object.create(EF.c.Element.prototype);
 
       return AppElement;
     }
