@@ -116,7 +116,7 @@ EF.i.Mouse = (function(){
   mouse.isLeftButton = function()
   {
     return but.l;
-  }
+  };
 
   /**
    * Get whether or no the secondary mouse button is pressed.

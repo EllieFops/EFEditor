@@ -25,7 +25,7 @@ var EFElement = (function ()
    */
   EFElement.prototype.getType = function ()
   {
-    return this.e.nodeName
+    return this.e.nodeName;
   };
 
   /**
@@ -34,7 +34,7 @@ var EFElement = (function ()
    */
   EFElement.prototype.getId = function ()
   {
-    return this.e.id
+    return this.e.id;
   };
 
   /**
@@ -45,7 +45,7 @@ var EFElement = (function ()
   EFElement.prototype.setId = function (n)
   {
     this.e.id = n;
-    return this
+    return this;
   };
 
   /**
@@ -54,7 +54,7 @@ var EFElement = (function ()
    */
   EFElement.prototype.getClasses = function ()
   {
-    return this.e.classList
+    return this.e.classList;
   };
 
   /**
@@ -65,7 +65,7 @@ var EFElement = (function ()
   EFElement.prototype.addClass = function (a)
   {
     this.e.classList.add(a);
-    return this
+    return this;
   };
 
   /**
@@ -76,7 +76,7 @@ var EFElement = (function ()
   EFElement.prototype.dropClass = function (a)
   {
     this.e.classList.remove(a);
-    return this
+    return this;
   };
 
   /**
@@ -86,7 +86,7 @@ var EFElement = (function ()
    */
   EFElement.prototype.hasClass = function (a)
   {
-    return this.e.classList.contains(a)
+    return this.e.classList.contains(a);
   };
 
   /**
@@ -96,7 +96,7 @@ var EFElement = (function ()
    */
   EFElement.prototype.getAttribute = function (a)
   {
-    return this.e.getAttribute(a)
+    return this.e.getAttribute(a);
   };
 
   /**
@@ -108,7 +108,7 @@ var EFElement = (function ()
   EFElement.prototype.setAttribute = function (a, v)
   {
     this.e.setAttribute(a, v);
-    return this
+    return this;
   };
 
   /**
@@ -134,7 +134,7 @@ var EFElement = (function ()
    */
   EFElement.prototype.getInnerLength = function ()
   {
-    return this.e.innerText.length
+    return this.e.innerText.length;
   };
 
   /**
@@ -147,7 +147,7 @@ var EFElement = (function ()
     a = this.e.innerText.length;
     b = this.children;
     for (i = 0; i < b.length; i++) {
-      a -= b[i].getInnerLength()
+      a -= b[i].getInnerLength();
     }
     return a;
   };
@@ -195,7 +195,7 @@ var EFElement = (function ()
       return -1;
     }
     i = this.children.indexOf(n);
-    if (i == -1) {
+    if (i === -1) {
       return i;
     }
     return this.children[i].startPosition;
@@ -241,13 +241,15 @@ var EFElement = (function ()
    */
   EFElement.prototype.getNodeAt = function (p)
   {
+    var c;
     if (p < this.startPosition || p > this.endPosition) {
       return (this.parent instanceof EFElement) ? this.parent.getNodeAt(p) : null;
     }
-    for (var c in this.children) {
-      if (!this.children.hasOwnProperty(c) || !this.children[c] instanceof EFElement) {
-        continue;
-      }
+    for (c in this.children) {
+
+      if (!this.children.hasOwnProperty(c)) {continue;}
+      if (!this.children[c] instanceof EFElement) {continue;}
+
       if (p < this.children[c].startPosition || p > this.children[c].endPosition) {
         continue;
       }
@@ -274,9 +276,9 @@ var EFElement = (function ()
       return (this.parent instanceof EFElement) ? this.parent.getNodeContaining(s, e) : null;
     }
     for (var c  in this.children) {
-      if (!this.children.hasOwnProperty(c) || !(this.children[c] instanceof EFElement)) {
-        continue;
-      }
+      if (!this.children.hasOwnProperty(c)) {continue;}
+      if(!(this.children[c] instanceof EFElement)) {continue;}
+
       if (check(this.children[c], s, e)) {
         return this.children[c].getNodeContaining(s, e);
       }
@@ -293,7 +295,6 @@ var EFElement = (function ()
    */
   EFElement.prototype.breakNode = function (node, position, forward)
   {
-    console.log(forward);
     if (!node instanceof EFElement || position) {
       return false; // TODO
     }
@@ -307,7 +308,7 @@ var EFElement = (function ()
   EFElement.prototype.setElement = function (z)
   {
     this.e = z;
-    return this
+    return this;
   };
 
   /**
@@ -316,7 +317,7 @@ var EFElement = (function ()
    */
   EFElement.prototype.getElement = function ()
   {
-    return this.e
+    return this.e;
   };
 
   /**

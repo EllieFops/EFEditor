@@ -25,8 +25,8 @@ EF.a.App = (
      */
     App.prototype.registerElement = function(e)
     {
-      if (!e instanceof AppElement) {
-        console.log('[WARNING] Invalid element passed to App.registerElement().  Element ignored.');
+      if (!e instanceof EF.c.AppElement) {
+        // console.log('[WARNING] Invalid element passed to App.registerElement().  Element ignored.');
         return false;
       }
 
@@ -52,7 +52,7 @@ EF.a.App = (
       function upd()
       {
         var i;
-        speed = 1 / EF.a.Configuration.getValue(fps, 30);
+        speed = 1 / EF.a.Configuration.getValue('fps', 30);
         last = current;
         current = new Date().getTime();
 

@@ -1,7 +1,8 @@
 // Namespace: efe.interface
-if(typeof EF == "undefined") {
-  EF = {interface:{}};
-} else if(typeof EF.interface == "undefined") {
+if (typeof EF === "undefined") {
+  EF = {interface: {}};
+}
+else if (typeof EF.interface === "undefined") {
   EF.interface = {};
 }
 
@@ -11,26 +12,24 @@ EF.interface.WEditor = (function() {
   var bBoxes = {};
 
   var sizeClicked = false;
-  var clickedBB   = null;
-  var element     = null;
+  var clickedBB = null;
+  var element = null;
 
   var currentlyOver;
   var d;
 
 
-  function WEditor(e)
-  {
+  function WEditor(e) {
     element = e;
     this.selection = null;
 
-    e.getElement().addEventListener(DOMEvents.MOUSE_MOVE, bbMouseMoveEvent);
-    e.getElement().addEventListener(DOMEvents.MOUSE_OUT,  bbMouseOutEvent);
-    e.getElement().addEventListener(DOMEvents.MOUSE_DOWN, bbMouseDownEvent);
-    e.getElement().addEventListener(DOMEvents.MOUSE_UP,   bbMouseUpEvent);
+    e.getElement().addEventListener(EF.d.Event.MOUSE_MOVE, bbMouseMoveEvent);
+    e.getElement().addEventListener(EF.d.Event.MOUSE_OUT, bbMouseOutEvent);
+    e.getElement().addEventListener(EF.d.Event.MOUSE_DOWN, bbMouseDownEvent);
+    e.getElement().addEventListener(EF.d.Event.MOUSE_UP, bbMouseUpEvent);
   }
 
-  WEditor.prototype.initEvents = function(e)
-  {
+  WEditor.prototype.initEvents = function(e) {
     var a;
     a = e.getElement();
   };
@@ -39,8 +38,7 @@ EF.interface.WEditor = (function() {
    *
    * @param e {MouseEvent}
    */
-  function bbMouseMoveEvent(e)
-  {
+  function bbMouseMoveEvent(e) {
     var b, c, z, a;
 
     if (sizeClicked) {
@@ -49,7 +47,9 @@ EF.interface.WEditor = (function() {
 
     if (!sizeClicked) {
       for (a in bBoxes) {
-        if (!bBoxes.hasOwnProperty(a)) {continue}
+        if (!bBoxes.hasOwnProperty(a)) {
+          continue;
+        }
         a = bBoxes[a];
         //noinspection JSCheckFunctionSignatures
         c = a.isInResizeRange(EF.input.Mouse.getPosition());
@@ -69,26 +69,32 @@ EF.interface.WEditor = (function() {
 
       if ((d.top && d.left) || (d.bottom && d.right)) {
         z.cursor = "nwse-resize";
-      } else if ((d.top && d.right) || (d.bottom && d.left)) {
+      }
+      else if ((d.top && d.right) || (d.bottom && d.left)) {
         z.cursor = "nesw-resize";
-      } else if (d.top || d.bottom) {
+      }
+      else if (d.top || d.bottom) {
         z.cursor = 'ns-resize';
-      } else if (d.left || d.right) {
+      }
+      else if (d.left || d.right) {
         z.cursor = 'ew-resize';
       }
     }
 
-    if (EF.input.Mouse.isLeftButton()) {bbResizeEvent(e)}
+    if (EF.input.Mouse.isLeftButton()) {
+      bbResizeEvent(e);
+    }
   }
 
-  function bbResizeEvent(e)
-  {
+  function bbResizeEvent(e) {
     var el, controlStyle, ie, x, y, elementRect, elementStyle, controlRect, editorRect;
 
-    if (!clickedBB) {return}
+    if (!clickedBB) {
+      return
+    }
     el = clickedBB.getElement();
     ie = clickedBB.getChildren()[0].getElement();
-    editorRect  = element.getElement().getBoundingClientRect();
+    editorRect = element.getElement().getBoundingClientRect();
     elementRect = ie.getBoundingClientRect();
     controlRect = el.getBoundingClientRect();
     controlStyle = el.style;
@@ -101,18 +107,19 @@ EF.interface.WEditor = (function() {
         y = 0 - ((controlRect.top - editorRect.top));
       }
       elementStyle.height = (elementRect.height - y) + 'px';
-      if (controlStyle.top != "auto") {
+      if (controlStyle.top !== "auto") {
         controlStyle.bottom = (editorRect.height - (controlRect.bottom - editorRect.top)) + 'px';
-        controlStyle.top    = 'auto';
+        controlStyle.top = 'auto';
       }
-    } else if ((d.bottom && controlRect.bottom <= editorRect.bottom)) {
+    }
+    else if ((d.bottom && controlRect.bottom <= editorRect.bottom)) {
       if ((controlRect.bottom + y) > editorRect.bottom) {
         y = ((controlRect.bottom - editorRect.bottom));
       }
       elementStyle.height = (elementRect.height + y) + 'px';
-      if (controlStyle.bottom != "auto") {
+      if (controlStyle.bottom !== "auto") {
         controlStyle.bottom = 'auto';
-        controlStyle.top    = (controlRect.top - editorRect.top) + 'px';
+        controlStyle.top = (controlRect.top - editorRect.top) + 'px';
       }
     }
 
@@ -121,18 +128,19 @@ EF.interface.WEditor = (function() {
         x = 0 - ((controlRect.left - editorRect.left));
       }
       elementStyle.width = (elementRect.width - x) + 'px';
-      if (controlStyle.left != "auto") {
+      if (controlStyle.left !== "auto") {
         controlStyle.right = (editorRect.width - (controlRect.right - editorRect.left)) + 'px';
-        controlStyle.left    = 'auto';
+        controlStyle.left = 'auto';
       }
-    } else if (d.right) {
+    }
+    else if (d.right) {
       if ((controlRect.right + x) > editorRect.right) {
         x = ((controlRect.right - editorRect.right));
       }
       elementStyle.width = (elementRect.width + x) + 'px';
-      if (controlStyle.right != "auto") {
+      if (controlStyle.right !== "auto") {
         controlStyle.right = 'auto';
-        controlStyle.left    = (controlRect.left - editorRect.left) + 'px';
+        controlStyle.left = (controlRect.left - editorRect.left) + 'px';
       }
     }
 
@@ -142,35 +150,33 @@ EF.interface.WEditor = (function() {
    *
    * @param e {MouseEvent}
    */
-  function bbMouseOutEvent(e)
-  {
+  function bbMouseOutEvent(e) {
     var x;
     x = e.fromElement || e.originalTarget;
-    if (!bBoxes[x.id]) {return}
+    if (!bBoxes[x.id]) {
+      return;
+    }
     element.getElement().style.cursor = 'default';
   }
 
-  function bbMouseDownEvent(e)
-  {
-    clickedBB   = currentlyOver;
+  function bbMouseDownEvent(e) {
+    clickedBB = currentlyOver;
     sizeClicked = true;
   }
 
-  function bbMouseUpEvent()
-  {
+  function bbMouseUpEvent() {
     if (sizeClicked) {
       element.getElement().style.cursor = 'default';
     }
     sizeClicked = false;
   }
 
-  WEditor.prototype.getSelection = function()
-  {};
+  WEditor.prototype.getSelection = function() {
+  };
 
-  WEditor.prototype.setSelection = function (s)
-  {
+  WEditor.prototype.setSelection = function(s) {
     this.selection = s;
-    App.emitter.emitEvent(EFEvents.SEL_CHANGE, self);
+    //App.emitter.emitEvent(EFEvents.SEL_CHANGE, self);
   };
 
   /**
@@ -178,8 +184,7 @@ EF.interface.WEditor = (function() {
    * @param e {EFElement}
    * @param p {Position}
    */
-  WEditor.prototype.insertElement = function(e, p)
-  {
+  WEditor.prototype.insertElement = function(e, p) {
     var boundingBox,
         config,
         edement,
@@ -187,14 +192,14 @@ EF.interface.WEditor = (function() {
 
     // Convert to EFElement if not already.
     if (e instanceof HTMLElement) {
-      e = DOMHelper.convertDomToEF(e);
+      //e = DOMHelper.convertDomToEF(e);
     }
 
     if (!e instanceof EFElement || !p instanceof Position) {
       throw Error('Invalid parameter passed to WEditor.insertElement().');
     }
 
-    boundingBox = new EFBoundingBox(ElementFactory.DIV());
+    //boundingBox = new EFBoundingBox(ElementFactory.DIV());
     edement = boundingBox.getElement();
     edement.classList.add('EFBoundingBox');
 
@@ -204,10 +209,10 @@ EF.interface.WEditor = (function() {
     bBoxes[edement.id] = boundingBox;
 
     // noinspection JSCheckFunctionSignatures
-    config  = Configuration.getValue('decoration.selectedElement');
+    config = EF.a.Configuration.getValue('decoration.selectedElement');
     elStyle = edement.style;
 
-    elStyle.padding     = (config.padding      || 3) + 'px';
+    elStyle.padding = (config.padding || 3) + 'px';
     elStyle.borderWidth = (config.border.width || 1) + 'px';
     elStyle.borderStyle = (config.border.style || 'dotted');
     elStyle.borderColor = (config.border.color || 'red');
@@ -215,16 +220,16 @@ EF.interface.WEditor = (function() {
     config = config.border.radius;
 
     if (config.topLeft) {
-      elStyle.borderTopLeftRadius = config.topLeft
+      elStyle.borderTopLeftRadius = config.topLeft;
     }
     if (config.topRight) {
-      elStyle.borderTopRightRadius = config.topRight
+      elStyle.borderTopRightRadius = config.topRight;
     }
     if (config.bottomLeft) {
-      elStyle.borderBottomLeftRadius = config.bottomLeft
+      elStyle.borderBottomLeftRadius = config.bottomLeft;
     }
     if (config.bottomRight) {
-      elStyle.borderBottomRightRadius = config.bottomRight
+      elStyle.borderBottomRightRadius = config.bottomRight;
     }
 
     elStyle.position = 'absolute';

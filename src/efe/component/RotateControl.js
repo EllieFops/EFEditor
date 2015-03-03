@@ -16,7 +16,9 @@ EF.c.MoveControl =
 
       MoveControl.prototype = Object.create(EF.c.EditControl.prototype);
 
-      MoveControl.prototype.handleDrag = function(e) {};
+      MoveControl.prototype.handleDrag = function(e) {
+        var a = e.target;
+      };
 
       return MoveControl;
     }

@@ -15,10 +15,12 @@ EF.c.ButtonSet =
         if (b instanceof EF.c.ToolbarButton) {
           this.buttons.push(b);
         }
-        return this
+        return this;
       };
 
-      ButtonSet.prototype.getButtons = function() {return this.buttons};
+      ButtonSet.prototype.getButtons = function() {
+        return this.buttons;
+      };
 
       return ButtonSet;
     }

@@ -22,7 +22,13 @@
   .selCell {
     width: 1em;
     height: 1em;
-    border: @borderOuter;
+    border: @borderMain;
+    background-color: @darkLight;
+  }
+
+  .selCell:hover {
+    border-color: @darkLight;
+    background-color: @darkLight + #111;
   }
 }
 

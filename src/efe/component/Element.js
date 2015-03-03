@@ -70,7 +70,9 @@ EF.c.Element =
           a.setElement(b);
           convertTree(a);
         }
-        if (typeof b == "string") {a.setElement(document.createElement(b));}
+        if (typeof b === "string") {
+          a.setElement(document.createElement(b));
+        }
         a.getElement().EFElement = a;
       }
 
@@ -100,11 +102,7 @@ EF.c.Element =
        * @returns {boolean}
        */
       Element.prototype.checkE = function(e) {
-        if (!e instanceof EF.c.Element) {
-          console.warn('Cannot append element to non-element object.');
-          return false;
-        }
-        return true;
+        return e instanceof EF.c.Element;
       };
 
       /**
@@ -115,22 +113,24 @@ EF.c.Element =
        * @returns {EF.c.Element}
        */
       Element.prototype.appendTo = function(e) {
-        if (this.checkE(e)) {e.append(this);}
+        if (this.checkE(e)) {
+          e.append(this);
+        }
         return this;
       };
 
       /**
        * Append an element to this element.
        *
-       * @param e
+       * @param e {EF.c.Element}
        *
        * @returns {EF.c.Element}
        */
       Element.prototype.append = function(e) {
         if (this.checkE(e)) {
           e.setParent(this);
-          a.element.appendChild(b.element);
-          a.children.push(b);
+          this.element.appendChild(e.element);
+          this.children.push(e);
         }
         return this;
       };
@@ -138,9 +138,9 @@ EF.c.Element =
       /**
        * Move this element
        *
-       * @param x
-       * @param y
-       * @param z
+       * @param x {Number}
+       * @param y {Number}
+       * @param z {Number}
        */
       Element.prototype.move = function(x, y, z) {
         this.position.x += x || 0;
@@ -187,11 +187,11 @@ EF.c.Element =
        * @param s {string|number}
        */
       Element.prototype.css = function(p, s) {
-        if (typeof p == "string" && (
-          typeof s == "string" || typeof s == "number"
+        if (typeof p === "string" && (
+          typeof s === "string" || typeof s === "number"
           )) {
           this.element.style.setProperty(p, s, null);
-        } else if (typeof p == "object") {
+        } else if (typeof p === "object") {
           for (var i in p) {
             if (p.hasOwnProperty(i)) {
               this.css(i, p[i]);
@@ -208,11 +208,13 @@ EF.c.Element =
        */
       Element.prototype.addClass = function(c) {
         var a, b;
-        if (typeof c == "string") {
-          this.element.classList.add(c)
+        if (typeof c === "string") {
+          this.element.classList.add(c);
         } else if (c instanceof Array) {
           a = c.length;
-          for (b = 0; b < a; b++) {this.addClass(c[b]);}
+          for (b = 0; b < a; b++) {
+            this.addClass(c[b]);
+          }
         }
         return this;
       };
@@ -224,11 +226,13 @@ EF.c.Element =
        */
       Element.prototype.removeClass = function(c) {
         var a, b;
-        if (typeof c == "string") {
+        if (typeof c === "string") {
           this.element.classList.remove(c);
         } else if (c instanceof Array) {
           a = c.length;
-          for (b = 0; b < a; b++) {this.removeClass(c[b])}
+          for (b = 0; b < a; b++) {
+            this.removeClass(c[b]);
+          }
         }
       };
 
@@ -237,7 +241,9 @@ EF.c.Element =
        *
        * @returns {*}
        */
-      Element.prototype.getId = function() {return this.element.id};
+      Element.prototype.getId = function() {
+        return this.element.id;
+      };
 
       /**
        * Set Element Id
@@ -247,8 +253,12 @@ EF.c.Element =
        * @returns {EF.c.Element}
        */
       Element.prototype.setId = function(i) {
-        this.element.id = i;
-        return this
+        if (i === '' || i === false || i === null) {
+          this.element.removeAttribute('id');
+        } else {
+          this.element.id = i;
+        }
+        return this;
       };
 
       /**
@@ -256,14 +266,18 @@ EF.c.Element =
        *
        * @returns {EF.c.Element}
        */
-      Element.prototype.clone = function(t) {return new EF.c.Element(this.element.cloneNode(t))};
+      Element.prototype.clone = function(t) {
+        return new EF.c.Element(this.element.cloneNode(t));
+      };
 
       /**
        * Get Element Text
        *
        * @returns {string|*|innerText}
        */
-      Element.prototype.getText = function() {return this.element.innerText};
+      Element.prototype.getText = function() {
+        return this.element.innerText;
+      };
 
       /**
        * Set Element Text
@@ -274,7 +288,7 @@ EF.c.Element =
        */
       Element.prototype.setText = function(t) {
         this.element.innerText = t;
-        return this
+        return this;
       };
 
       /**
@@ -287,7 +301,7 @@ EF.c.Element =
        */
       Element.prototype.setAttr = function(k, v) {
         this.element.setAttribute(k, v);
-        return this
+        return this;
       };
 
       /**
@@ -297,14 +311,18 @@ EF.c.Element =
        *
        * @returns {*|string|string|*}
        */
-      Element.prototype.getAttr = function(k) {return this.element.getAttribute(k)};
+      Element.prototype.getAttr = function(k) {
+        return this.element.getAttribute(k);
+      };
 
       /**
        * Get Backing Element
        *
        * @returns {HTMLElement}
        */
-      Element.prototype.getElement = function() {return this.element};
+      Element.prototype.getElement = function() {
+        return this.element;
+      };
 
       /**
        * Set Backing Element.
@@ -337,28 +355,36 @@ EF.c.Element =
        *
        * @returns {Number}
        */
-      Element.prototype.clientTop = function() {return this.element.getBoundingClientRect().top;};
+      Element.prototype.clientTop = function() {
+        return this.element.getBoundingClientRect().top;
+      };
 
       /**
        * Get x position of the left of this element relative to the left side of the client
        *
        * @returns {Number}
        */
-      Element.prototype.clientLeft = function() {return this.element.getBoundingClientRect().left;};
+      Element.prototype.clientLeft = function() {
+        return this.element.getBoundingClientRect().left;
+      };
 
       /**
        * Get x position of the right side of this element relative to the right side of the client.
        *
        * @returns {Number}
        */
-      Element.prototype.clientRight = function() {return this.element.getBoundingClientRect().right;};
+      Element.prototype.clientRight = function() {
+        return this.element.getBoundingClientRect().right;
+      };
 
       /**
        * Get y position of the bottom of this element relative to the bottom of the client
        *
        * @returns {Number}
        */
-      Element.prototype.clientBottom = function() {return this.element.getBoundingClientRect().bottom;};
+      Element.prototype.clientBottom = function() {
+        return this.element.getBoundingClientRect().bottom;
+      };
 
       /**
        * Get y position of the top of this element relative to it's parent element.
@@ -366,7 +392,9 @@ EF.c.Element =
        * @returns {Number}
        */
       Element.prototype.offsetTop = function() {
-        if (!this.par) {return this.clientTop();}
+        if (!this.par) {
+          return this.clientTop();
+        }
         return this.clientTop() - this.par.clientTop();
       };
 
@@ -376,7 +404,9 @@ EF.c.Element =
        * @returns {Number}
        */
       Element.prototype.offsetLeft = function() {
-        if (!this.par) {return this.clientLeft();}
+        if (!this.par) {
+          return this.clientLeft();
+        }
         return this.this.clientLeft() - this.par.clientLeft();
       };
 
@@ -386,7 +416,9 @@ EF.c.Element =
        * @returns {Number}
        */
       Element.prototype.offsetRight = function() {
-        if (!this.par) {return this.clientRight();}
+        if (!this.par) {
+          return this.clientRight();
+        }
         return this.this.clientRight() - this.par.clientRight();
       };
 
@@ -396,7 +428,9 @@ EF.c.Element =
        * @returns {Number}
        */
       Element.prototype.offsetBottom = function() {
-        if (!this.par) {return this.clientBottom();}
+        if (!this.par) {
+          return this.clientBottom();
+        }
         return this.this.clientBottom() - this.par.clientBottom();
       };
 
@@ -405,7 +439,17 @@ EF.c.Element =
        *
        * @returns {EF.c.Element|*}
        */
-      Element.prototype.getParent = function() {return this.par;};
+      Element.prototype.getParent = function() {
+        return this.par;
+      };
+
+      /**
+       * Delete this element.
+       */
+      Element.prototype.remove = function() {
+        this.par.element.removeChild(this.element);
+        this.par.children.splice(this.par.children.indexOf(this), 1);
+      };
 
       return Element;
     }

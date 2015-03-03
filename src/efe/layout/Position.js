@@ -26,13 +26,13 @@ EF.lay.Position = (
       this.zPos = z || 0;
     }
 
-    Position.prototype.getXPos = function() {return this.xPos};
-    Position.prototype.getYPos = function() {return this.yPos};
-    Position.prototype.getZPos = function() {return this.zPos};
+    Position.prototype.getXPos = function() {return this.xPos;};
+    Position.prototype.getYPos = function() {return this.yPos;};
+    Position.prototype.getZPos = function() {return this.zPos;};
 
-    Position.prototype.setXPos = function(x) {this.xPos = x; return self};
-    Position.prototype.setYPos = function(y) {this.yPos = y; return self};
-    Position.prototype.setZPos = function(z) {this.zPos = z; return self};
+    Position.prototype.setXPos = function(x) {this.xPos = x; return this;};
+    Position.prototype.setYPos = function(y) {this.yPos = y; return this;};
+    Position.prototype.setZPos = function(z) {this.zPos = z; return this;};
 
     return Position;
   }

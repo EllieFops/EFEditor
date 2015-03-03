@@ -41,9 +41,9 @@ EF.c.EditControl =
       };
 
       EditControl.prototype.update = function() {
-        this.target.offsetTop
+        // this.target.offsetTop //TODO
       };
 
-      return EditControl
+      return EditControl;
     }
   )();

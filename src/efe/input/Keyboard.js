@@ -23,14 +23,14 @@ EF.i.Keyboard =
          *
          * @returns {number}
          */
-        get KEY_ESC() {return 27},
+        get KEY_ESC() {return 27;},
 
         /**
          * KEY_TAB
          *
          * @returns {number}
          */
-        get KEY_BACKSPACE() {return 8},
+        get KEY_BACKSPACE() {return 8;},
 
         /**
          * KEY_TAB
@@ -128,9 +128,9 @@ EF.i.Keyboard =
          */
         get KEY_DASH() {
           switch (EF.App.getBrowserType()) {
-            case BrowserType.FIREFOX:
+            case EF.d.Browser.FIREFOX:
               return 173;
-            case BrowserType.OPERA:
+            case EF.d.Browser.OPERA:
               return 45;
             default:
               return 189;
@@ -144,7 +144,7 @@ EF.i.Keyboard =
          */
         get KEY_COMMA() {
           switch (EF.App.getBrowserType()) {
-            case BrowserType.OPERA:
+            case EF.d.Browser.OPERA:
               return 44;
             default:
               return 188;
@@ -158,7 +158,7 @@ EF.i.Keyboard =
          */
         get KEY_PERIOD() {
           switch (EF.App.getBrowserType()) {
-            case BrowserType.OPERA:
+            case EF.d.Browser.OPERA:
               return 46;
             default:
               return 190;
@@ -173,7 +173,7 @@ EF.i.Keyboard =
          */
         get KEY_OPEN_BRACKET() {
           switch (EF.App.getBrowserType()) {
-            case BrowserType.OPERA:
+            case EF.d.Browser.OPERA:
               return 91;
             default:
               return 219;
@@ -194,8 +194,8 @@ EF.i.Keyboard =
          */
         get KEY_EQUALS_SIGN() {
           switch (bT) {
-            case BrowserType.FIREFOX:
-            case BrowserType.OPERA:
+            case EF.d.Browser.FIREFOX:
+            case EF.d.Browser.OPERA:
               return 61;
             default:
               return 187;
@@ -209,7 +209,7 @@ EF.i.Keyboard =
          */
         get KEY_FORWARD_SLASH() {
           switch (bT) {
-            case BrowserType.OPERA:
+            case EF.d.Browser.OPERA:
               return 47;
             default:
               return 191;
@@ -239,9 +239,9 @@ EF.i.Keyboard =
          */
         get KEY_SEMICOLON() {
           switch (bT) {
-            case BrowserType.FIREFOX:
+            case EF.d.Browser.FIREFOX:
               return 59;
-            case BrowserType.OPERA:
+            case EF.d.Browser.OPERA:
               return 59;
             default:
               return 186;
@@ -634,6 +634,7 @@ EF.i.Keyboard =
         ) ? true : false;
       };
 
+      constructor();
       return {
         Keys:         Keys,
         isKeyPressed: 0
