@@ -1,4 +1,4 @@
-EF.u.JSON =
+EFEditor.u.JSON =
   (function()
   {
 

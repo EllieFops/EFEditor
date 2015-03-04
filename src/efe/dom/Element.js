@@ -1,4 +1,4 @@
-EF.d.Element = {
+EFEditor.d.Element = {
   /**
    * @return {string}
    */

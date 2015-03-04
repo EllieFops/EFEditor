@@ -1,49 +1,48 @@
 /**
  * Element Edit Control
  *
- * @author: Elizabeth Harper <elliefops@gmail.com>
- * @namespace: EF.c
+ * @class     EditControl
+ * @namespace component
+ * @extends   element.EditorElement
+ *
+ * @module  EFEditor
+ * @since   0.0.1
+ * @version 0.0.1
+ *
+ * @author Elizabeth Harper <elliefops@gmail.com>
+ *
+ * @constructor
+ * @param target {HTMLElement|String}
  */
-EF.c.EditControl =
-  (
-    function() {
-      /**
-       * Edit Control
-       *
-       * @param e {EF.c.Element} Element that will be modified by this control.
-       *
-       * @constructor
-       */
-      function EditControl(e) {
+EFEditor.component.EditControl = function(target) {
 
-        EF.c.Element.call(this, 'div');
+  var self;
 
-        this.target = e;
-        this.clicked = false;
+  EFEditor.element.EditorElement.call(this, 'div');
+  this.prototype = Object.create(EFEditor.element.EditorElement.prototype);
 
-        this.addClass('posAbs');
-        this.addGlobalEventHandler(EF.d.Event.MOUSE_UP, this.handleUnclick);
-        this.addSelfEventHandler(EF.d.Event.MOUSE_DOWN, this.handleThisClick);
-      }
+  self         = this;
+  self.target  = target;
+  self.clicked = false;
 
-      EditControl.prototype = Object.create(EF.c.Element.prototype);
+  self.addClass('posAbs');
+  self.addGlobalEventHandler(EFEditor.d.Event.MOUSE_UP, self.handleUnclick);
+  self.addSelfEventHandler(EFEditor.d.Event.MOUSE_DOWN, self.handleThisClick);
 
-      EditControl.prototype.handleThisClick = function() {
-        this.clicked = true;
-      };
 
-      EditControl.prototype.handleUnclick = function() {
-        this.clicked = false;
-      };
+  self.handleThisClick = function() {
+    self.clicked = true;
+  };
 
-      EditControl.prototype.handleDrop = function() {
-        return false;
-      };
+  self.handleUnclick = function() {
+    self.clicked = false;
+  };
 
-      EditControl.prototype.update = function() {
-        // this.target.offsetTop //TODO
-      };
+  self.handleDrop = function() {
+    return false;
+  };
 
-      return EditControl;
-    }
-  )();
+  self.update = function() {
+    // this.target.offsetTop //TODO
+  };
+};

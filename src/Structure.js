@@ -1,15 +1,18 @@
-var EF = {
+var EFEditor = {
   // Application
-  a: {},
+  app: {},
 
   // Components
-  c: {},
+  component: {},
 
   // DOM
   d: {},
 
+  // Elements
+  element: {},
+
   // Events
-  e: {},
+  event: {},
 
   // Input
   i: {},

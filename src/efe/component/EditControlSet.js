@@ -5,7 +5,7 @@
  * @namespace: efe.component
  */
 
-EF.c.EditControlSet =
+EFEditor.component.EditControlSet =
   (
     function() {
 

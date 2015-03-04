@@ -4,15 +4,15 @@
  * @author: Elizabeth Harper <elliefops@gmail.com>
  * @namespace: EF.v
  */
-EF.v.ConfigurationView =
+EFEditor.v.ConfigurationView =
   (
     function() {
       function ConfigurationView() {
-        EF.v.Pane.call(this);
+        EFEditor.v.Pane.call(this);
 
       }
 
-      ConfigurationView.prototype = Object.create(EF.v.Pane.prototype);
+      ConfigurationView.prototype = Object.create(EFEditor.v.Pane.prototype);
 
       return ConfigurationView;
     }

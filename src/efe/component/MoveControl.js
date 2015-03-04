@@ -1,19 +1,22 @@
 /**
- * Element Movement Control
+ * Editor Component Movement Control
  *
- * @author: Elizabeth Harper <elliefops@gmail.com>
- * @namespace: EF.c
+ * @class     MoveControl
+ * @namespace component
+ *
+ * @module  EFEditor
+ * @since   0.0.1
+ * @version 0.0.1
+ *
+ * @author Elizabeth Harper <elliefops@gmail.com>
+ *
+ * @constructor
  */
-EF.c.MoveControl =
-  (
-    function() {
-      function MoveControl() {
-        EF.c.EditControl.call(this);
+EFEditor.component.MoveControl = function() {
+  EFEditor.component.EditControl.call(this);
 
-        this.addClass('moveControl');
-      }
+  this.addClass('moveControl');
+  this.prototype = Object.create(EFEditor.component.EditControl.prototype);
 
-      MoveControl.prototype = Object.create(EF.c.EditControl.prototype);
-      return MoveControl;
-    }
-  )();
+};
+

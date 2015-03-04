@@ -4,16 +4,16 @@
  * @author: Elizabeth Harper <elliefops@gmail.com>
  * @namespace: EF.v
  */
-EF.v.Toolbar =
+EFEditor.v.Toolbar =
   (
     function() {
       function Toolbar() {
-        EF.v.Pane.call(this);
+        EFEditor.v.Pane.call(this);
 
         this.buttonSets = [];
       }
 
-      Toolbar.prototype = Object.create(EF.v.Pane.prototype);
+      Toolbar.prototype = Object.create(EFEditor.v.Pane.prototype);
 
       return Toolbar;
     }

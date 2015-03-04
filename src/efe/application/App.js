@@ -4,7 +4,7 @@
  * @author: Elizabeth Harper <elliefops@gmail.com>
  * @namespace: efe.a
  */
-EF.a.App = (
+EFEditor.app.App = (
   function()
   {
     var appRunning = false;
@@ -25,7 +25,7 @@ EF.a.App = (
      */
     App.prototype.registerElement = function(e)
     {
-      if (!e instanceof EF.c.AppElement) {
+      if (!e instanceof EFEditor.component.AppElement) {
         // console.log('[WARNING] Invalid element passed to App.registerElement().  Element ignored.');
         return false;
       }
@@ -52,7 +52,7 @@ EF.a.App = (
       function upd()
       {
         var i;
-        speed = 1 / EF.a.Configuration.getValue('fps', 30);
+        speed = 1 / EFEditor.app.Configuration.getValue('fps', 30);
         last = current;
         current = new Date().getTime();
 

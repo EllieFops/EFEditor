@@ -4,20 +4,20 @@
  * @author: Elizabeth Harper <elliefops@gmail.com>
  * @namespace: efe.component
  */
-EF.c.MoveControl =
+EFEditor.component.MoveControl =
   (
     function() {
       function MoveControl() {
-        EF.c.EditControl.call(this);
+        EFEditor.component.EditControl.call(this);
 
 
         this.addClass('rotControl');
       }
 
-      MoveControl.prototype = Object.create(EF.c.EditControl.prototype);
+      MoveControl.prototype = Object.create(EFEditor.component.EditControl.prototype);
 
       MoveControl.prototype.handleDrag = function(e) {
-        var a = e.target;
+        return e;
       };
 
       return MoveControl;

@@ -4,15 +4,15 @@
  * @author: Elizabeth Harper <elliefops@gmail.com>
  * @namespace: efe.component
  */
-EF.c.AppElement =
+EFEditor.component.AppElement =
   (
     function() {
 
       function AppElement(e) {
-        EF.c.Element.call(this, e);
+        EFEditor.component.Element.call(this, e);
       }
 
-      AppElement.prototype = Object.create(EF.c.Element.prototype);
+      AppElement.prototype = Object.create(EFEditor.component.Element.prototype);
 
       return AppElement;
     }

@@ -1,12 +1,4 @@
-// Namespace: efe.interface
-if (typeof EF === "undefined") {
-  EF = {interface: {}};
-}
-else if (typeof EF.interface === "undefined") {
-  EF.interface = {};
-}
-
-EF.interface.WEditor = (function() {
+EFEditor.v.WEditor = (function() {
 
   var bbCount = 0;
   var bBoxes = {};
@@ -23,10 +15,10 @@ EF.interface.WEditor = (function() {
     element = e;
     this.selection = null;
 
-    e.getElement().addEventListener(EF.d.Event.MOUSE_MOVE, bbMouseMoveEvent);
-    e.getElement().addEventListener(EF.d.Event.MOUSE_OUT, bbMouseOutEvent);
-    e.getElement().addEventListener(EF.d.Event.MOUSE_DOWN, bbMouseDownEvent);
-    e.getElement().addEventListener(EF.d.Event.MOUSE_UP, bbMouseUpEvent);
+    e.getElement().addEventListener(EFEditor.d.Event.MOUSE_MOVE, bbMouseMoveEvent);
+    e.getElement().addEventListener(EFEditor.d.Event.MOUSE_OUT, bbMouseOutEvent);
+    e.getElement().addEventListener(EFEditor.d.Event.MOUSE_DOWN, bbMouseDownEvent);
+    e.getElement().addEventListener(EFEditor.d.Event.MOUSE_UP, bbMouseUpEvent);
   }
 
   WEditor.prototype.initEvents = function(e) {
@@ -42,7 +34,7 @@ EF.interface.WEditor = (function() {
     var b, c, z, a;
 
     if (sizeClicked) {
-      sizeClicked = EF.input.Mouse.isLeftButton();
+      sizeClicked = EFEditor.input.Mouse.isLeftButton();
     }
 
     if (!sizeClicked) {
@@ -52,7 +44,7 @@ EF.interface.WEditor = (function() {
         }
         a = bBoxes[a];
         //noinspection JSCheckFunctionSignatures
-        c = a.isInResizeRange(EF.input.Mouse.getPosition());
+        c = a.isInResizeRange(EFEditor.input.Mouse.getPosition());
         if (c.top || c.bottom || c.left || c.right) {
           b = (b && b.getElement().style.zIndex > a.getElement().style.zIndex) ? b : a;
           d = c;
@@ -81,7 +73,7 @@ EF.interface.WEditor = (function() {
       }
     }
 
-    if (EF.input.Mouse.isLeftButton()) {
+    if (EFEditor.input.Mouse.isLeftButton()) {
       bbResizeEvent(e);
     }
   }
@@ -90,7 +82,7 @@ EF.interface.WEditor = (function() {
     var el, controlStyle, ie, x, y, elementRect, elementStyle, controlRect, editorRect;
 
     if (!clickedBB) {
-      return
+      return;
     }
     el = clickedBB.getElement();
     ie = clickedBB.getChildren()[0].getElement();
@@ -159,7 +151,7 @@ EF.interface.WEditor = (function() {
     element.getElement().style.cursor = 'default';
   }
 
-  function bbMouseDownEvent(e) {
+  function bbMouseDownEvent() {
     clickedBB = currentlyOver;
     sizeClicked = true;
   }
@@ -195,9 +187,9 @@ EF.interface.WEditor = (function() {
       //e = DOMHelper.convertDomToEF(e);
     }
 
-    if (!e instanceof EFElement || !p instanceof Position) {
-      throw Error('Invalid parameter passed to WEditor.insertElement().');
-    }
+//    if (!e instanceof EFElement || !p instanceof Position) {
+//      throw Error('Invalid parameter passed to WEditor.insertElement().');
+//    }
 
     //boundingBox = new EFBoundingBox(ElementFactory.DIV());
     edement = boundingBox.getElement();
@@ -209,7 +201,7 @@ EF.interface.WEditor = (function() {
     bBoxes[edement.id] = boundingBox;
 
     // noinspection JSCheckFunctionSignatures
-    config = EF.a.Configuration.getValue('decoration.selectedElement');
+    config = EFEditor.app.Configuration.getValue('decoration.selectedElement');
     elStyle = edement.style;
 
     elStyle.padding = (config.padding || 3) + 'px';

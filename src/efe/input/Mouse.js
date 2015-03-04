@@ -4,7 +4,7 @@
  * @author: Elizabeth Harper <elliefops@gmail.com>
  * @namespace: efe.i
  */
-EF.i.Mouse = (function(){
+EFEditor.i.Mouse = (function(){
 
   var mouse = {
     PRIMARY: 0,
@@ -15,9 +15,9 @@ EF.i.Mouse = (function(){
   /**
    * Mouse Position
    *
-   * @type {EF.lay.Position}
+   * @type {EFEditor.lay.Position}
    */
-  var pos = new EF.lay.Position(0, 0, 0);
+  var pos = new EFEditor.lay.Position(0, 0, 0);
 
   /**
    * Mouse Button States
@@ -32,9 +32,9 @@ EF.i.Mouse = (function(){
 
   function constructor()
   {
-    document.addEventListener(EF.dom.Events.MOUSE_MOVE, uP);
-    document.addEventListener(EF.dom.Events.MOUSE_UP,   bU);
-    document.addEventListener(EF.dom.Events.MOUSE_DOWN, bD);
+    document.addEventListener(EFEditor.dom.Events.MOUSE_MOVE, uP);
+    document.addEventListener(EFEditor.dom.Events.MOUSE_UP,   bU);
+    document.addEventListener(EFEditor.dom.Events.MOUSE_DOWN, bD);
   }
 
   /**
@@ -91,7 +91,7 @@ EF.i.Mouse = (function(){
   /**
    * Get Mouse Position
    *
-   * @returns {EF.lay.Position}
+   * @returns {EFEditor.lay.Position}
    */
   mouse.getPosition = function()
   {

@@ -4,30 +4,30 @@
  * @author: Elizabeth Harper <elliefops@gmail.com>
  * @namespace: efe.view
  */
-EF.v.TableSize =
+EFEditor.v.TableSize =
   (
     function() {
 
       function TableSize() {
-        EF.v.Pane.call(this, new EF.c.Element('div'));
+        EFEditor.v.Pane.call(this, new EFEditor.component.Element('div'));
 
         this.table  = null;
         this.span   = null;
         this.counts = {};
 
-        this.addSelfEventHandler(EF.d.Event.CLICK, this.handleClick);
-        this.addSelfEventHandler(EF.d.Event.MOUSE_MOVE, this.handleMouseMove);
-        this.addSelfEventHandler(EF.d.Event.MOUSE_OVER, this.handleMouseOver);
+        this.addSelfEventHandler(EFEditor.d.Event.CLICK, this.handleClick);
+        this.addSelfEventHandler(EFEditor.d.Event.MOUSE_MOVE, this.handleMouseMove);
+        this.addSelfEventHandler(EFEditor.d.Event.MOUSE_OVER, this.handleMouseOver);
 
         this.init();
       }
 
-      TableSize.prototype = Object.create(EF.v.Pane.prototype);
+      TableSize.prototype = Object.create(EFEditor.v.Pane.prototype);
 
       TableSize.prototype.init = function() {
         this.table = initTable();
         this.element.setId('tableSelectionPane').append(initTable());
-        this.span = new EF.c.Element('span');
+        this.span = new EFEditor.component.Element('span');
         this.span.setText('1 x 1');
       };
 
@@ -35,9 +35,9 @@ EF.v.TableSize =
 
         var td, tr, table;
 
-        table = new EF.c.Element('table');
-        tr    = new EF.c.Element('tr');
-        td    = new EF.c.Element('td');
+        table = new EFEditor.component.Element('table');
+        tr    = new EFEditor.component.Element('tr');
+        td    = new EFEditor.component.Element('td');
 
         td.addClass('selCell');
 
@@ -55,7 +55,7 @@ EF.v.TableSize =
        *
        * @param e {MouseEvent}
        */
-      TableSize.prototype.handleClick = function(e) {
+      TableSize.prototype.handleClick = function() {
 
       };
 
@@ -67,7 +67,7 @@ EF.v.TableSize =
       TableSize.prototype.handleMouseOver = function(e) {
         var a, r, t, i, c;
         t = e.target;
-        if (t.nodeName === EF.d.Element.TD && t.EFElement) {
+        if (t.nodeName === EFEditor.d.Element.TD && t.EFElement) {
 
           /** @type {HTMLElement} */
           r = t.parentNode;
@@ -98,7 +98,7 @@ EF.v.TableSize =
        *
        * @param e {MouseEvent}
        */
-      TableSize.prototype.handleMouseMove = function(e) {
+      TableSize.prototype.handleMouseMove = function() {
         var a, c;
         a = document.querySelectorAll('#tableSelectionPane tr').length;
         this.table.getChildren()[0].setId('tempIddd');
