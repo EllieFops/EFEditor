@@ -50,6 +50,11 @@ EFEditor.element.EditorElement = function(element) {
    */
   var selfEvents = {};
 
+  function init() {
+    var a = self.htmlElement.getBoundingClientRect();
+    self.position = new Position(a.left, a.top);
+  }
+
   /**
    * Add Handler for Global Events
    *
@@ -98,8 +103,11 @@ EFEditor.element.EditorElement = function(element) {
    * @return {EditorElement}
    */
   self.move = function(x, y, z) {
-    self.position.x += x || 0;
-    self.position.y += y || 0;
+    x = (x) ? self.position.getXPos() + x : 0;
+    y = (y) ? self.position.getYPos() + y : 0;
+    z = (z) ? self.position.getZPos() + z : 0;
+    self.position.setXPos(x);
+    self.position.setYPos;
     self.position.z += z || 0;
     return self;
   };
@@ -130,9 +138,13 @@ EFEditor.element.EditorElement = function(element) {
   /**
    * Get a non-live copy of this element's Position
    *
-   * @returns {*}
+   * @method getPosition
+   *
+   * @returns {EFEditor.lay.Position}
    */
   self.getPosition = function() {
-    return
+    return new EFEditor.lay.Position(self.position);
   };
+
+  init();
 };

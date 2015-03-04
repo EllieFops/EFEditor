@@ -12,7 +12,7 @@
  * @author Elizabeth Harper <elliefops@gmail.com>
  *
  * @constructor
- * @param target {HTMLElement|String}
+ * @param target {EFEditor.element.EditorElement}
  */
 EFEditor.component.EditControl = function(target) {
 
@@ -22,27 +22,64 @@ EFEditor.component.EditControl = function(target) {
   this.prototype = Object.create(EFEditor.element.EditorElement.prototype);
 
   self         = this;
+
+  /**
+   * Edit Control Target
+   *
+   * @property target
+   *
+   * @type {EFEditor.element.EditorElement}
+   */
   self.target  = target;
+
+  /**
+   * Is this element clicked
+   *
+   * @property clicked
+   *
+   * @type {boolean}
+   */
   self.clicked = false;
 
-  self.addClass('posAbs');
+  /**
+   * Distance to keep from target element
+   *
+   * @property distance
+   *
+   * @type {number}
+   */
+  self.distance = 5;
+
   self.addGlobalEventHandler(EFEditor.d.Event.MOUSE_UP, self.handleUnclick);
-  self.addSelfEventHandler(EFEditor.d.Event.MOUSE_DOWN, self.handleThisClick);
+  self.addSelfEventHandler(EFEditor.d.Event.MOUSE_DOWN, self.handleSelfClick);
 
+  /**
+   * Initialize
+   *
+   * @method init
+   * @private
+   */
+  function init() {
+    self.css('position', 'absolute');
+  }
 
-  self.handleThisClick = function() {
+  /**
+   * Handle Clicks on this element.
+   *
+   * @method handleSelfClick
+   */
+  self.handleSelfClick = function() {
     self.clicked = true;
   };
 
+  /**
+   * Handle Global MouseUp event.
+   *
+   * @method handleUnclick
+   */
   self.handleUnclick = function() {
     self.clicked = false;
   };
 
-  self.handleDrop = function() {
-    return false;
-  };
-
-  self.update = function() {
-    // this.target.offsetTop //TODO
-  };
+  init();
 };

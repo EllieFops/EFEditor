@@ -161,5 +161,4 @@ EFEditor.lay.Position = function(x, y, z) {
     zPos = z;
     return self;
   };
-
 };
