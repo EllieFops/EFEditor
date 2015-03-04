@@ -2,18 +2,17 @@
  * Toolbar
  *
  * @author: Elizabeth Harper <elliefops@gmail.com>
- * @namespace: EF.v
  */
-EFEditor.v.Toolbar =
+EFEdit.v.Toolbar =
   (
     function() {
       function Toolbar() {
-        EFEditor.v.Pane.call(this);
+        EFEdit.v.Pane.call(this);
 
         this.buttonSets = [];
       }
 
-      Toolbar.prototype = Object.create(EFEditor.v.Pane.prototype);
+      Toolbar.prototype = Object.create(EFEdit.v.Pane.prototype);
 
       return Toolbar;
     }

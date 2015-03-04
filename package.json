@@ -22,5 +22,5 @@
     "grunt-contrib-uglify": "~0.8.0",
     "grunt-contrib-yuidoc": "^0.7.0"
   },
-  "build": "25"
+  "build": "26"
 }

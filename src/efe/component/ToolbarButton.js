@@ -5,7 +5,7 @@
  * @namespace: EF.c
  */
 
-EFEditor.component.ToolbarButton =
+EFEdit.component.ToolbarButton =
   (
     function() {
       /**
@@ -15,13 +15,13 @@ EFEditor.component.ToolbarButton =
        * @constructor
        */
       function ToolbarButton(v,t) {
-        EFEditor.component.Element.call(this, 'a');
+        EFEdit.component.Element.call(this, 'a');
 
         this.setText(v);
         this.setAttr('title', t);
       }
 
-      ToolbarButton.prototype = Object.create(EFEditor.component.Element.prototype);
+      ToolbarButton.prototype = Object.create(EFEdit.component.Element.prototype);
 
       return ToolbarButton;
     }

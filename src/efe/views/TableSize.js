@@ -2,32 +2,31 @@
  * Table Size Picker View
  *
  * @author: Elizabeth Harper <elliefops@gmail.com>
- * @namespace: efe.view
  */
-EFEditor.v.TableSize =
+EFEdit.v.TableSize =
   (
     function() {
 
       function TableSize() {
-        EFEditor.v.Pane.call(this, new EFEditor.component.Element('div'));
+        EFEdit.v.Pane.call(this, new EFEdit.component.Element('div'));
 
         this.table  = null;
         this.span   = null;
         this.counts = {};
 
-        this.addSelfEventHandler(EFEditor.d.Event.CLICK, this.handleClick);
-        this.addSelfEventHandler(EFEditor.d.Event.MOUSE_MOVE, this.handleMouseMove);
-        this.addSelfEventHandler(EFEditor.d.Event.MOUSE_OVER, this.handleMouseOver);
+        this.addSelfEventHandler(EFEdit.dom.Event.CLICK, this.handleClick);
+        this.addSelfEventHandler(EFEdit.dom.Event.MOUSE_MOVE, this.handleMouseMove);
+        this.addSelfEventHandler(EFEdit.dom.Event.MOUSE_OVER, this.handleMouseOver);
 
         this.init();
       }
 
-      TableSize.prototype = Object.create(EFEditor.v.Pane.prototype);
+      TableSize.prototype = Object.create(EFEdit.v.Pane.prototype);
 
       TableSize.prototype.init = function() {
         this.table = initTable();
         this.element.setId('tableSelectionPane').append(initTable());
-        this.span = new EFEditor.component.Element('span');
+        this.span = new EFEdit.component.Element('span');
         this.span.setText('1 x 1');
       };
 
@@ -35,9 +34,9 @@ EFEditor.v.TableSize =
 
         var td, tr, table;
 
-        table = new EFEditor.component.Element('table');
-        tr    = new EFEditor.component.Element('tr');
-        td    = new EFEditor.component.Element('td');
+        table = new EFEdit.component.Element('table');
+        tr    = new EFEdit.component.Element('tr');
+        td    = new EFEdit.component.Element('td');
 
         td.addClass('selCell');
 
@@ -67,7 +66,7 @@ EFEditor.v.TableSize =
       TableSize.prototype.handleMouseOver = function(e) {
         var a, r, t, i, c;
         t = e.target;
-        if (t.nodeName === EFEditor.d.Element.TD && t.EFElement) {
+        if (t.nodeName === EFEdit.dom.Element.TD && t.EFElement) {
 
           /** @type {HTMLElement} */
           r = t.parentNode;

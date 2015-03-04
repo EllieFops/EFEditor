@@ -14,12 +14,12 @@
  * @constructor
  * @param element {HTMLElement|String}
  */
-EFEditor.element.EditableElement = function(element) {
+EFEdit.element.EditableElement = function(element) {
 
   var self;
 
-  EFEditor.element.UserElement.call(this, element);
-  this.prototype = Object.create(EFEditor.element.UserElement.prototype);
+  EFEdit.element.UserElement.call(this, element);
+  this.prototype = Object.create(EFEdit.element.UserElement.prototype);
 
   self = this;
 

@@ -14,10 +14,10 @@
  * @constructor
  * @param element {HTMLElement|String}
  */
-EFEditor.element.EditorElement = function(element) {
+EFEdit.element.EditorElement = function(element) {
 
-  EFEditor.element.BlockElement.call(this, element);
-  this.prototype = Object.create(EFEditor.element.BlockElement.prototype);
+  EFEdit.element.BlockElement.call(this, element);
+  this.prototype = Object.create(EFEdit.element.BlockElement.prototype);
 
   var self = this;
 
@@ -26,7 +26,7 @@ EFEditor.element.EditorElement = function(element) {
    *
    * @property position
    *
-   * @type {EFEditor.lay.Position}
+   * @type {EFEdit.layout.Position}
    */
   self.position = null;
 
@@ -52,7 +52,7 @@ EFEditor.element.EditorElement = function(element) {
 
   function init() {
     var a = self.htmlElement.getBoundingClientRect();
-    self.position = new Position(a.left, a.top);
+    self.position = new EFEdit.layout.Position(a.left, a.top);
   }
 
   /**
@@ -107,7 +107,7 @@ EFEditor.element.EditorElement = function(element) {
     y = (y) ? self.position.getYPos() + y : 0;
     z = (z) ? self.position.getZPos() + z : 0;
     self.position.setXPos(x);
-    self.position.setYPos;
+    self.position.setYPos(y);
     self.position.z += z || 0;
     return self;
   };
@@ -140,10 +140,10 @@ EFEditor.element.EditorElement = function(element) {
    *
    * @method getPosition
    *
-   * @returns {EFEditor.lay.Position}
+   * @returns {EFEdit.layout.Position}
    */
   self.getPosition = function() {
-    return new EFEditor.lay.Position(self.position);
+    return new EFEdit.layout.Position(self.position);
   };
 
   init();

@@ -1,4 +1,4 @@
-EFEditor.d.Browser = {
+EFEdit.dom.Browser = {
   IE:      0,
   SAFARI:  1,
   OPERA:   2,

@@ -14,11 +14,11 @@
  * @constructor
  * @param e {HTMLElement|String}
  */
-EFEditor.element.BlockElement = function(e) {
+EFEdit.element.BlockElement = function(e) {
 
   var self;
 
-  EFEditor.element.Element.call(this, e);
+  EFEdit.element.Element.call(this, e);
 
   self = this;
 

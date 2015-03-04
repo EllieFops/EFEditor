@@ -12,14 +12,14 @@
  * @author Elizabeth Harper <elliefops@gmail.com>
  *
  * @constructor
- * @param target {EFEditor.element.EditorElement}
+ * @param target {EFEdit.element.EditorElement}
  */
-EFEditor.component.EditControl = function(target) {
+EFEdit.component.EditControl = function(target) {
 
   var self;
 
-  EFEditor.element.EditorElement.call(this, 'div');
-  this.prototype = Object.create(EFEditor.element.EditorElement.prototype);
+  EFEdit.element.EditorElement.call(this, 'div');
+  this.prototype = Object.create(EFEdit.element.EditorElement.prototype);
 
   self         = this;
 
@@ -28,7 +28,7 @@ EFEditor.component.EditControl = function(target) {
    *
    * @property target
    *
-   * @type {EFEditor.element.EditorElement}
+   * @type {EFEdit.element.EditorElement}
    */
   self.target  = target;
 
@@ -50,9 +50,6 @@ EFEditor.component.EditControl = function(target) {
    */
   self.distance = 5;
 
-  self.addGlobalEventHandler(EFEditor.d.Event.MOUSE_UP, self.handleUnclick);
-  self.addSelfEventHandler(EFEditor.d.Event.MOUSE_DOWN, self.handleSelfClick);
-
   /**
    * Initialize
    *
@@ -60,26 +57,42 @@ EFEditor.component.EditControl = function(target) {
    * @private
    */
   function init() {
+    var e = EFEdit.dom.Event;
+    self.addGlobalEventHandler(e.MOUSE_UP, handleUnclick);
+    self.addSelfEventHandler(e.MOUSE_DOWN, handleSelfClick);
     self.css('position', 'absolute');
   }
+
+  /**
+   * Return whether or not this element is currently 'clicked'
+   *
+   * @method isClicked
+   *
+   * @returns {boolean}
+   */
+  self.isClicked = function() {
+    return self.clicked;
+  };
 
   /**
    * Handle Clicks on this element.
    *
    * @method handleSelfClick
+   * @private
    */
-  self.handleSelfClick = function() {
+  function handleSelfClick() {
     self.clicked = true;
-  };
+  }
 
   /**
    * Handle Global MouseUp event.
    *
    * @method handleUnclick
+   * @private
    */
-  self.handleUnclick = function() {
+  function handleUnclick() {
     self.clicked = false;
-  };
+  }
 
   init();
 };

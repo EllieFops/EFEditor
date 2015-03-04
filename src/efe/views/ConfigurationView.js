@@ -2,17 +2,16 @@
  * Configuration View
  *
  * @author: Elizabeth Harper <elliefops@gmail.com>
- * @namespace: EF.v
  */
-EFEditor.v.ConfigurationView =
+EFEdit.v.ConfigurationView =
   (
     function() {
       function ConfigurationView() {
-        EFEditor.v.Pane.call(this);
+        EFEdit.v.Pane.call(this);
 
       }
 
-      ConfigurationView.prototype = Object.create(EFEditor.v.Pane.prototype);
+      ConfigurationView.prototype = Object.create(EFEdit.v.Pane.prototype);
 
       return ConfigurationView;
     }

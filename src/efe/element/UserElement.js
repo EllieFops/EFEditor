@@ -14,12 +14,12 @@
  * @constructor
  * @param element {HTMLElement|String}
  */
-EFEditor.element.UserElement = function(element) {
+EFEdit.element.UserElement = function(element) {
 
   var self;
 
-  EFEditor.element.EditorElement.call(this, element);
-  this.prototype = Object.create(EFEditor.element.EditorElement.prototype);
+  EFEdit.element.EditorElement.call(this, element);
+  this.prototype = Object.create(EFEdit.element.EditorElement.prototype);
 
   self = this;
 
@@ -95,11 +95,11 @@ EFEditor.element.UserElement = function(element) {
       return (n.startPosition < s || n.endPosition < s || n.startPosition > e || n.endPosition > e);
     };
     if (check(self, start, end)) {
-      return (self.parent instanceof EFEditor.element.UserElement) ? self.parent.getElementContaining(start, end) : null;
+      return (self.parent instanceof EFEdit.element.UserElement) ? self.parent.getElementContaining(start, end) : null;
     }
     for (var c  in self.children) {
       if (!self.children.hasOwnProperty(c)) {continue;}
-      if(!(self.children[c] instanceof EFEditor.element.UserElement)) {continue;}
+      if(!(self.children[c] instanceof EFEdit.element.UserElement)) {continue;}
 
       if (check(self.children[c], start, end)) {
         return self.children[c].getElementContaining(start, end);
@@ -122,12 +122,12 @@ EFEditor.element.UserElement = function(element) {
   {
     var c;
     if (pos < self.startPosition || pos > self.endPosition) {
-      return (self.parent instanceof EFEditor.element.UserElement) ? self.parent.getElementAt(pos) : null;
+      return (self.parent instanceof EFEdit.element.UserElement) ? self.parent.getElementAt(pos) : null;
     }
     for (c in self.children) {
 
       if (!self.children.hasOwnProperty(c)) {continue;}
-      if (!self.children[c] instanceof EFEditor.element.UserElement) {continue;}
+      if (!self.children[c] instanceof EFEdit.element.UserElement) {continue;}
 
       if (pos < self.children[c].startPosition || pos > self.children[c].endPosition) {
         continue;
@@ -184,7 +184,7 @@ EFEditor.element.UserElement = function(element) {
   self.findStartPositionOf = function (element)
   {
     var i;
-    if (!element instanceof EFEditor.element.UserElement) {
+    if (!element instanceof EFEdit.element.UserElement) {
       return -1;
     }
     i = this.children.indexOf(element);

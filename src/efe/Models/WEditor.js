@@ -1,4 +1,4 @@
-EFEditor.v.WEditor = (function() {
+EFEdit.v.WEditor = (function() {
 
   var bbCount = 0;
   var bBoxes = {};
@@ -15,10 +15,10 @@ EFEditor.v.WEditor = (function() {
     element = e;
     this.selection = null;
 
-    e.getElement().addEventListener(EFEditor.d.Event.MOUSE_MOVE, bbMouseMoveEvent);
-    e.getElement().addEventListener(EFEditor.d.Event.MOUSE_OUT, bbMouseOutEvent);
-    e.getElement().addEventListener(EFEditor.d.Event.MOUSE_DOWN, bbMouseDownEvent);
-    e.getElement().addEventListener(EFEditor.d.Event.MOUSE_UP, bbMouseUpEvent);
+    e.getElement().addEventListener(EFEdit.dom.Event.MOUSE_MOVE, bbMouseMoveEvent);
+    e.getElement().addEventListener(EFEdit.dom.Event.MOUSE_OUT, bbMouseOutEvent);
+    e.getElement().addEventListener(EFEdit.dom.Event.MOUSE_DOWN, bbMouseDownEvent);
+    e.getElement().addEventListener(EFEdit.dom.Event.MOUSE_UP, bbMouseUpEvent);
   }
 
   WEditor.prototype.initEvents = function(e) {
@@ -34,7 +34,7 @@ EFEditor.v.WEditor = (function() {
     var b, c, z, a;
 
     if (sizeClicked) {
-      sizeClicked = EFEditor.input.Mouse.isLeftButton();
+      sizeClicked = EFEdit.input.Mouse.isLeftButton();
     }
 
     if (!sizeClicked) {
@@ -44,7 +44,7 @@ EFEditor.v.WEditor = (function() {
         }
         a = bBoxes[a];
         //noinspection JSCheckFunctionSignatures
-        c = a.isInResizeRange(EFEditor.input.Mouse.getPosition());
+        c = a.isInResizeRange(EFEdit.input.Mouse.getPosition());
         if (c.top || c.bottom || c.left || c.right) {
           b = (b && b.getElement().style.zIndex > a.getElement().style.zIndex) ? b : a;
           d = c;
@@ -73,7 +73,7 @@ EFEditor.v.WEditor = (function() {
       }
     }
 
-    if (EFEditor.input.Mouse.isLeftButton()) {
+    if (EFEdit.input.Mouse.isLeftButton()) {
       bbResizeEvent(e);
     }
   }
@@ -201,7 +201,7 @@ EFEditor.v.WEditor = (function() {
     bBoxes[edement.id] = boundingBox;
 
     // noinspection JSCheckFunctionSignatures
-    config = EFEditor.app.Configuration.getValue('decoration.selectedElement');
+    config = EFEdit.core.Configuration.getValue('decoration.selectedElement');
     elStyle = edement.style;
 
     elStyle.padding = (config.padding || 3) + 'px';

@@ -1,12 +1,13 @@
-var EFEditor = {
-  // Application
-  app: {},
+var EFEdit = {
 
   // Components
   component: {},
 
+  // Application
+  core: {},
+
   // DOM
-  d: {},
+  dom: {},
 
   // Elements
   element: {},
@@ -15,11 +16,12 @@ var EFEditor = {
   event: {},
 
   // Input
-  i: {},
-  lay: {},
+  input: {},
+
+  layout: {},
 
   // Utility
-  u: {},
+  utility: {},
 
   // View
   v: {}

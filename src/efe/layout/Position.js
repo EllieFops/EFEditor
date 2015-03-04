@@ -15,7 +15,7 @@
  * @param [y=0] {int}
  * @param [z=0] {int}
  */
-EFEditor.lay.Position = function(x, y, z) {
+EFEdit.layout.Position = function(x, y, z) {
   var self = this;
 
   /**
@@ -76,7 +76,7 @@ EFEditor.lay.Position = function(x, y, z) {
    */
   function init() {
 
-    if (x instanceof EFEditor.lay.Position) {
+    if (x instanceof EFEdit.layout.Position) {
       xPos = x.getXPos();
       yPos = x.getYPos();
       zPos = x.getZPos();

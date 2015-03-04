@@ -2,20 +2,19 @@
  * View Pane
  *
  * @author: Elizabeth Harper <elliefops@gmail.com>
- * @namespace: EF.v
  */
-EFEditor.v.Pane =
+EFEdit.v.Pane =
   (
     function() {
       function Pane(e)
       {
-        EFEditor.component.AppElement.call(this, e);
+        EFEdit.component.AppElement.call(this, e);
 
         this.modal    = false;
-        this.position = new EFEditor.lay.Position();
+        this.position = new EFEdit.layout.Position();
       }
 
-      Pane.prototype = Object.create(EFEditor.component.AppElement.prototype);
+      Pane.prototype = Object.create(EFEdit.component.AppElement.prototype);
 
       Pane.prototype.update = function() {};
       return Pane;

@@ -4,7 +4,7 @@
  * @author: Elizabeth Harper <elliefops@gmail.com>
  * @namespace: efe.util
  */
-EFEditor.u.Browser =
+EFEdit.utility.Browser =
   (
     function() {
       function Browser() {}
@@ -12,15 +12,15 @@ EFEditor.u.Browser =
       Browser.prototype.getType = function() {
         var browser;
         if (!!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0) {
-          browser = EFEditor.dom.Browser.OPERA;
+          browser = EFEdit.dom.Browser.OPERA;
         } else if (typeof InstallTrigger !== 'undefined') {
-          browser = EFEditor.dom.Browser.FIREFOX;
+          browser = EFEdit.dom.Browser.FIREFOX;
         } else if(Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0) {
-          browser = EFEditor.dom.Browser.SAFARI;
+          browser = EFEdit.dom.Browser.SAFARI;
         } else if(!!window.chrome) {
-          browser = EFEditor.dom.Browser.CHROME;
+          browser = EFEdit.dom.Browser.CHROME;
         } else if (/*@cc_on!@*/false || !!document.documentMode) {
-          browser = EFEditor.dom.Browser.IE;
+          browser = EFEdit.dom.Browser.IE;
         }
         return browser;
       };

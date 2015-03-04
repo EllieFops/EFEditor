@@ -1,4 +1,4 @@
-EFEditor.d.Event = {
+EFEdit.dom.Event = {
   /**
    * @return {string}
    */

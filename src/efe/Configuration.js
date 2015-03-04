@@ -2,7 +2,6 @@
  * Application Config
  *
  * @class     Configuration
- * @namespace application
  *
  * @module  EFEditor
  * @since   0.0.1
@@ -11,10 +10,31 @@
  * @author Elizabeth Harper <elliefops@gmail.com>
  * @static
  */
-EFEditor.app.Configuration = (function() {
+EFEdit.Configuration = (function() {
 
+  /**
+   * Configuration Object
+   *
+   * @type {Object}
+   */
   var values = {
+
+    /**
+     * EFEdit Modules To load
+     *
+     * @property modules
+     *
+     * @type {Object}
+     */
     modules:    {},
+
+    /**
+     * Whitelisted HTML Elements
+     *
+     * @property whiteList
+     *
+     * @type {Object}
+     */
     whiteList:  {
       'B':     true,
       'DIV':   true,
@@ -32,7 +52,23 @@ EFEditor.app.Configuration = (function() {
       'U':     true,
       'UL':    true
     },
+
+    /**
+     * Decoration Configuration Blocks
+     *
+     * @property decoration
+     *
+     * @type {Object}
+     */
     decoration: {
+
+      /**
+       * Editor Element Decoration
+       *
+       * @property decoration.elements
+       *
+       * @type {Object}
+       */
       elements:        {
         padding: 5,
         border:  {
@@ -47,6 +83,14 @@ EFEditor.app.Configuration = (function() {
           }
         }
       },
+
+      /**
+       * Selected Element Decoration
+       *
+       * @property decoration.selectedElement
+       *
+       * @type {Object}
+       */
       selectedElement: {
         inherits: 'decoration.elements',
         border:   {
@@ -98,13 +142,13 @@ EFEditor.app.Configuration = (function() {
           if (map[keyPart] instanceof Object) {
             if (inheritedValues.length) {
               inheritedValues.push(map[keyPart]);
-              tempMerged = EFEditor.u.JSON.hardMerge(inheritedValues);
+              tempMerged = EFEdit.utility.JSON.hardMerge(inheritedValues);
             }
             else {
               tempMerged = map[keyPart];
             }
             if (tempMerged.inherits) {
-              tempMerged = EFEditor.u.JSON.hardMerge(search(tempMerged.inherits, values), tempMerged);
+              tempMerged = EFEdit.utility.JSON.hardMerge(search(tempMerged.inherits, values), tempMerged);
             }
             return tempMerged;
           }
@@ -132,6 +176,10 @@ EFEditor.app.Configuration = (function() {
     return typeof result === "undefined" ? def : result;
   }
 
-  return {getValue: getValue};
+  function mergeInUserConfig(conf) {
+    values = EFEdit.utility.JSON.hardMerge(values, conf);
+  }
+
+  return {getValue: getValue, mergeInUserConfig: mergeInUserConfig};
 })();
 

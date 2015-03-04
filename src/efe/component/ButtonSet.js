@@ -4,7 +4,7 @@
  * @author: Elizabeth Harper <elliefops@gmail.com>
  * @namespace: efe.component
  */
-EFEditor.component.ButtonSet =
+EFEdit.component.ButtonSet =
   (
     function() {
       function ButtonSet() {
@@ -12,7 +12,7 @@ EFEditor.component.ButtonSet =
       }
 
       ButtonSet.prototype.addButton = function(b) {
-        if (b instanceof EFEditor.component.ToolbarButton) {
+        if (b instanceof EFEdit.component.ToolbarButton) {
           this.buttons.push(b);
         }
         return this;

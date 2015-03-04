@@ -13,7 +13,7 @@
  * @constructor
  * @param element {HTMLElement|String}
  */
-EFEditor.element.BasicElement = function(element) {
+EFEdit.element.BasicElement = function(element) {
 
   var self;
 
@@ -93,10 +93,9 @@ EFEditor.element.BasicElement = function(element) {
    * @param e {HTMLElement} Element who's child elements need to be converted.
    */
   function convertTree(e) {
-    var a, v, c;
-    v = e.getElement();
-    for (a = 0; a < v.children.length; a++) {
-      c = new EFEditor.element.BasicElement(v.children[a]);
+    var a, c;
+    for (a = 0; a < e.children.length; a++) {
+      c = new EFEdit.element.BasicElement(e.children[a]);
       a.append(c);
     }
   }
@@ -199,8 +198,8 @@ EFEditor.element.BasicElement = function(element) {
    * @method remove
    */
   self.remove = function() {
-    this.parent.element.removeChild(this.element);
-    this.parent.children.splice(this.parent.children.indexOf(this), 1);
+    self.parent.element.removeChild(self.element);
+    self.parent.children.splice(self.parent.children.indexOf(self), 1);
   };
 
   /**
@@ -208,16 +207,19 @@ EFEditor.element.BasicElement = function(element) {
    *
    * @method clone
    *
-   * @returns {EFEditor.Element}
+   * @returns {EFEdit.element.BasicElement}
    */
   self.clone = function(t) {
-    return new EFEditor.Element(this.element.cloneNode(t));
+    return new EFEdit.element.BasicElement(self.htmlElement.cloneNode(t));
   };
 
   /**
-   * Set CSS properties on this element
+   * Set or Get CSS properties on this element
    *
    * These can be set either as a property: value pair or as an object of property: value pairs.
+   *
+   * When used as a setter this method returns the object it was called on, making it chainable.  When used as a getter
+   * this method is not chainable as it returns the value of the css property.
    *
    * @method css
    *
@@ -225,13 +227,15 @@ EFEditor.element.BasicElement = function(element) {
    * @param [s] {string|number}
    *
    * @chainable
-   * @return {BasicElement}
+   * @return {BasicElement|string}
    */
   self.css = function(p, s) {
-    if (typeof p === "string" && (
-      typeof s === "string" || typeof s === "number"
-      )) {
-      self.element.style.setProperty(p, s, null);
+    if (typeof p === "string") {
+      if (typeof s === "string" || typeof s === "number") {
+        self.element.style.setProperty(p, s, null);
+      } else {
+        return self.element.style.getPropertyValue(p);
+      }
     }
     else if (typeof p === "object") {
       for (var i in p) {
@@ -269,7 +273,7 @@ EFEditor.element.BasicElement = function(element) {
    * @returns {BasicElement}
    */
   self.append = function(element) {
-    if (element instanceof EFEditor.element.BasicElement) {
+    if (element instanceof EFEdit.element.BasicElement) {
       self.parent = element;
       self.parent.children.push(self);
       self.parent.element.appendChild(self.element);

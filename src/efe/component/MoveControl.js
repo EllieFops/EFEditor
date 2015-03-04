@@ -13,12 +13,12 @@
  *
  * @constructor
  */
-EFEditor.component.MoveControl = function() {
+EFEdit.component.MoveControl = function() {
 
   var self;
 
-  EFEditor.component.EditControl.call(this);
-  this.prototype = Object.create(EFEditor.component.EditControl.prototype);
+  EFEdit.component.EditControl.call(this);
+  this.prototype = Object.create(EFEdit.component.EditControl.prototype);
 
   self = this;
 
@@ -26,7 +26,7 @@ EFEditor.component.MoveControl = function() {
     self.addClass('moveControl');
     self.css('cursor', 'move');
 
-    self.addGlobalEventHandler(EFEditor.d.Event.MOUSE_MOVE, self.handleMouseMove);
+    self.addGlobalEventHandler(EFEdit.dom.Event.MOUSE_MOVE, self.handleMouseMove);
   }
 
   self.update = function() {
@@ -48,10 +48,12 @@ EFEditor.component.MoveControl = function() {
    * @param e {MouseEvent}
    */
   self.handleMouseMove = function(e) {
+
     if (!self.clicked) {
       return;
     }
-    self.position.set
+
+    this.target.move(e.movementX, e.movementY);
   };
 
   init();
